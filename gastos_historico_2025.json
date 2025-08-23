@@ -1,0 +1,24 @@
+{
+  "2025-08-16": {
+    "gastos": [
+      {
+        "monto": 10000.0,
+        "motivo": "LIMPIEZA",
+        "usuario": "admin123",
+        "timestamp": "2025-08-16T22:10:56.507027"
+      }
+    ],
+    "total_gastos": 10000.0
+  },
+  "2025-08-23": {
+    "gastos": [
+      {
+        "monto": 10000.0,
+        "motivo": "caca",
+        "usuario": "Usuario Sistema",
+        "timestamp": "2025-08-23T03:31:43.155822"
+      }
+    ],
+    "total_gastos": 10000.0
+  }
+}

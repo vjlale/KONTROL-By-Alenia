@@ -1,0 +1,32 @@
+# Python/entorno
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Build/ejecutables (PyInstaller)
+build/
+dist/
+*.spec
+*.exe
+KONTROL+_v*/
+
+# Datos locales (no versionar)
+productos.json
+ventas.json
+ventas_historico_*.json
+usuarios.json
+gastos.json
+crm_leads.db
+crm_web/crm_leads.db
+
+# Exportaciones y temporales
+*.csv
+*.log
+*.tmp
+*.bak
+
+# SO
+.DS_Store
+Thumbs.db

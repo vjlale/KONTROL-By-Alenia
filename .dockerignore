@@ -1,0 +1,37 @@
+# Ignorar archivos innecesarios para Railway
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.so
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# Ignorar archivos locales del software de escritorio
+main.py
+productos.json
+ventas.json
+ventas_historico_*.json
+*.png
+*.jpg
+*.jpeg
+*.ico
+build/
+dist/
+*.spec
+
+# Documentación
+*.md
+docs/
+screenshot/

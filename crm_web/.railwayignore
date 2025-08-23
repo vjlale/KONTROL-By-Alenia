@@ -1,0 +1,16 @@
+# Ignorar archivos del software de escritorio para Railway deploy
+main.py
+*.db
+__pycache__/
+.venv/
+.vscode/
+screenshot/
+build/
+dist/
+*.spec
+*.png
+*.jpg
+*.jpeg
+ventas.json
+productos.json
+ventas_historico_*.json

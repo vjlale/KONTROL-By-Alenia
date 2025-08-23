@@ -1,0 +1,104 @@
+{
+  "name": "KONTROL+ Lead Capture & Followup",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "registro",
+        "options": {}
+      },
+      "id": "Webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [300, 300],
+      "webhookId": "kontrol-lead-capture"
+    },
+    {
+      "parameters": {
+        "fromEmail": "tu-email@dominio.com",
+        "toEmail": "={{$json[\"mail\"]}}",
+        "subject": "🎉 ¡Bienvenido a GESTION-KONTROL+!",
+        "text": "Hola {{$json[\"nombre\"]}},\n\n¡Gracias por registrarte! Descarga tu software aquí:\n👉 https://tulinkdedescarga.com\n\nCualquier duda, responde este mail. ¡Éxitos con tu negocio!\n\nEquipo GESTION-KONTROL+",
+        "html": "<p>Hola <b>{{$json[\"nombre\"]}}</b>,</p><p>¡Gracias por registrarte! Descarga tu software aquí:<br><a href=\"https://tulinkdedescarga.com\">Descargar GESTION-KONTROL+</a></p><p>Cualquier duda, responde este mail.<br>¡Éxitos con tu negocio!</p><p><b>Equipo GESTION-KONTROL+</b></p>"
+      },
+      "id": "EmailBienvenida",
+      "name": "Enviar Email Bienvenida",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [600, 300],
+      "credentials": {
+        "smtp": "TU_CREDENCIAL_SMTP"
+      }
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "days"
+      },
+      "id": "Wait3Dias",
+      "name": "Esperar 3 días",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "tu-email@dominio.com",
+        "toEmail": "={{$json[\"mail\"]}}",
+        "subject": "¿Cómo fue tu experiencia con GESTION-KONTROL+?",
+        "text": "Hola {{$json[\"nombre\"]}},\n\nHace unos días descargaste GESTION-KONTROL+. ¿Pudiste instalarlo y usarlo? ¿Tienes dudas o sugerencias?\n\nTu feedback nos ayuda a mejorar.\n\n¡Gracias!",
+        "html": "<p>Hola <b>{{$json[\"nombre\"]}}</b>,</p><p>Hace unos días descargaste <b>GESTION-KONTROL+</b>.<br>¿Pudiste instalarlo y usarlo? ¿Tienes dudas o sugerencias?</p><p>Tu feedback nos ayuda a mejorar.<br><b>¡Gracias!</b></p>"
+      },
+      "id": "EmailSeguimiento",
+      "name": "Enviar Email Seguimiento",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1200, 300],
+      "credentials": {
+        "smtp": "TU_CREDENCIAL_SMTP"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Enviar Email Bienvenida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Email Bienvenida": {
+      "main": [
+        [
+          {
+            "node": "Esperar 3 días",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar 3 días": {
+      "main": [
+        [
+          {
+            "node": "Enviar Email Seguimiento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "tags": [
+    {
+      "name": "kontrol+"
+    }
+  ]
+}

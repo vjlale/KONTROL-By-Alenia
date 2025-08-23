@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 Test CRM KONTROL+ - Diagnóstico en Tiempo Real</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .test-result {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            border-color: #4CAF50;
+        }
+        .error {
+            background: rgba(244, 67, 54, 0.2);
+            border-color: #f44336;
+        }
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border-color: #FFC107;
+        }
+        .info {
+            background: rgba(33, 150, 243, 0.2);
+            border-color: #2196F3;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        pre {
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Diagnóstico CRM KONTROL+</h1>
+        <p>Esta página prueba la funcionalidad completa del sistema de captación de leads.</p>
+        
+        <div>
+            <button onclick="testApiConnection()">🌐 Probar Conexión API</button>
+            <button onclick="testLeadSubmission()">📝 Probar Envío de Lead</button>
+            <button onclick="testGetLeads()">📊 Probar Obtener Leads</button>
+            <button onclick="simulateUserFlow()">👤 Simular Flujo Usuario</button>
+            <button onclick="runFullDiagnostic()">🚀 Diagnóstico Completo</button>
+        </div>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const API_URLS = [
+            'https://alenia-gestion-production-ae2f.up.railway.app',
+            'https://kontrol-crm-production.up.railway.app'
+        ];
+        
+        function addResult(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = message;
+            results.appendChild(div);
+            
+            // Auto-scroll al último resultado
+            div.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+        
+        async function testApiConnection() {
+            clearResults();
+            addResult('🔍 Iniciando test de conexión...', 'info');
+            
+            for (const baseUrl of API_URLS) {
+                try {
+                    const url = `${baseUrl}/api/leads`;
+                    addResult(`📡 Probando: ${url}`, 'info');
+                    
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        mode: 'cors'
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.text();
+                        addResult(`✅ ÉXITO: ${url}<br>Status: ${response.status}<br>Response: <pre>${data.substring(0, 200)}...</pre>`, 'success');
+                        return; // Si una URL funciona, salir del loop
+                    } else {
+                        addResult(`⚠️ Error HTTP: ${response.status} - ${response.statusText}`, 'warning');
+                    }
+                } catch (error) {
+                    addResult(`❌ Error de conexión: ${error.message}`, 'error');
+                }
+            }
+            
+            addResult('💔 Ninguna URL de API está respondiendo correctamente', 'error');
+        }
+        
+        async function testLeadSubmission() {
+            clearResults();
+            addResult('📝 Iniciando test de envío de lead...', 'info');
+            
+            const testLead = {
+                email: `test-${Date.now()}@kontrol-test.com`,
+                rubro: 'Test Automatizado'
+            };
+            
+            for (const baseUrl of API_URLS) {
+                try {
+                    const url = `${baseUrl}/api/lead`;
+                    addResult(`📡 Enviando lead a: ${url}`, 'info');
+                    
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        mode: 'cors',
+                        body: JSON.stringify(testLead)
+                    });
+                    
+                    const responseText = await response.text();
+                    
+                    if (response.ok) {
+                        addResult(`✅ LEAD ENVIADO EXITOSAMENTE!<br>URL: ${url}<br>Status: ${response.status}<br>Response: <pre>${responseText}</pre>`, 'success');
+                        
+                        // Redirección automática a la carta de presentación
+                        addResult(`🚀 Redirigiendo a la carta de presentación en 3 segundos...`, 'info');
+                        setTimeout(() => {
+                            window.location.href = 'https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html';
+                        }, 3000);
+                        return;
+                    } else {
+                        addResult(`⚠️ Error al enviar: ${response.status}<br>Response: <pre>${responseText}</pre>`, 'warning');
+                    }
+                } catch (error) {
+                    addResult(`❌ Error en envío: ${error.message}`, 'error');
+                }
+            }
+        }
+        
+        async function testGetLeads() {
+            clearResults();
+            addResult('📊 Obteniendo lista de leads...', 'info');
+            
+            for (const baseUrl of API_URLS) {
+                try {
+                    const url = `${baseUrl}/api/leads`;
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        mode: 'cors'
+                    });
+                    
+                    if (response.ok) {
+                        const leads = await response.json();
+                        addResult(`✅ LEADS OBTENIDOS: ${leads.length} registros<br>URL: ${url}<br><pre>${JSON.stringify(leads.slice(0, 3), null, 2)}</pre>`, 'success');
+                        return;
+                    }
+                } catch (error) {
+                    addResult(`❌ Error obteniendo leads: ${error.message}`, 'error');
+                }
+            }
+        }
+        
+        async function simulateUserFlow() {
+            clearResults();
+            addResult('👤 SIMULANDO FLUJO COMPLETO DE USUARIO...', 'info');
+            
+            // Simular datos que ingresaría un usuario real
+            const userData = {
+                email: `usuario.real.${Date.now()}@empresa.com`,
+                rubro: 'Comercio Minorista'
+            };
+            
+            addResult(`📝 Simulando usuario con datos: <br>Email: ${userData.email}<br>Rubro: ${userData.rubro}`, 'info');
+            
+            for (const baseUrl of API_URLS) {
+                try {
+                    const url = `${baseUrl}/api/lead`;
+                    addResult(`📡 Enviando datos del usuario a: ${url}`, 'info');
+                    
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        mode: 'cors',
+                        body: JSON.stringify(userData)
+                    });
+                    
+                    const responseText = await response.text();
+                    
+                    if (response.ok) {
+                        addResult(`✅ ¡USUARIO REGISTRADO EXITOSAMENTE!<br>URL: ${url}<br>Status: ${response.status}`, 'success');
+                        addResult(`🎯 Simulación completada: El usuario ahora sería redirigido a la carta de presentación`, 'success');
+                        addResult(`🚀 En 5 segundos se abrirá la carta de presentación como lo vería el usuario...`, 'info');
+                        
+                        setTimeout(() => {
+                            window.open('https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html', '_blank');
+                        }, 5000);
+                        return;
+                    } else {
+                        addResult(`⚠️ Error al registrar usuario: ${response.status}<br>Response: <pre>${responseText}</pre>`, 'warning');
+                    }
+                } catch (error) {
+                    addResult(`❌ Error en registro de usuario: ${error.message}`, 'error');
+                }
+            }
+            
+            // Si todos los servidores fallan, simular el comportamiento de fallback
+            addResult(`⚠️ Servidores no disponibles - Activando flujo de fallback`, 'warning');
+            addResult(`🔄 En un caso real, el usuario sería redirigido directamente a la carta de presentación`, 'info');
+            setTimeout(() => {
+                window.open('https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html', '_blank');
+            }, 3000);
+        }
+        
+        async function runFullDiagnostic() {
+            clearResults();
+            addResult('🚀 INICIANDO DIAGNÓSTICO COMPLETO...', 'info');
+            
+            await new Promise(resolve => setTimeout(resolve, 500));
+            await testApiConnection();
+            
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            await testLeadSubmission();
+            
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            await testGetLeads();
+            
+            addResult('🏁 DIAGNÓSTICO COMPLETADO', 'info');
+        }
+        
+        // Auto-ejecutar al cargar la página
+        window.addEventListener('load', () => {
+            addResult('🎯 Página de diagnóstico cargada. Haz clic en los botones para probar la funcionalidad.', 'info');
+        });
+    </script>
+</body>
+</html>

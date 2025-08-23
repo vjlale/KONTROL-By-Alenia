@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de Redirección - GESTION-KONTROL+</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #3b4fab 0%, #a40000 100%);
+            color: white;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.8);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #ff0000;
+        }
+        .success { border-left-color: #00ff00; }
+        .warning { border-left-color: #ffff00; }
+        .error { border-left-color: #ff0000; }
+        .button {
+            background: #ff0000;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-size: 14px;
+        }
+        .button:hover { background: #cc0000; }
+        pre {
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Diagnóstico de Redirección KONTROL+</h1>
+        
+        <div class="info-box">
+            <h3>📍 Información Actual</h3>
+            <p><strong>URL Actual:</strong> <span id="currentUrl"></span></p>
+            <p><strong>Referrer:</strong> <span id="referrerUrl"></span></p>
+            <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+            <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+        </div>
+
+        <div class="info-box warning">
+            <h3>⚠️ URLs Esperadas</h3>
+            <p><strong>Landing:</strong> https://vjlale.github.io/ALENIA-GESTION/landing_kontrol.html</p>
+            <p><strong>Carta:</strong> https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html</p>
+        </div>
+
+        <div class="info-box error">
+            <h3>❌ URL Problemática</h3>
+            <p>vjlale.github.io/ALENIA-GESTION/GESTION-KONTROL+ v2.3 Release/CARTA_PRESENTACION_GESTION_KONTROL.html</p>
+        </div>
+
+        <h3>🧪 Pruebas de Conectividad</h3>
+        <button class="button" onclick="testUrl('https://vjlale.github.io/ALENIA-GESTION/landing_kontrol.html', 'landing')">Probar Landing</button>
+        <button class="button" onclick="testUrl('https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html', 'carta')">Probar Carta</button>
+        <button class="button" onclick="testUrl('https://vjlale.github.io/ALENIA-GESTION/', 'root')">Probar Raíz</button>
+        <button class="button" onclick="clearCache()">Limpiar Caché</button>
+
+        <div id="results"></div>
+
+        <div class="info-box">
+            <h3>🛠️ Soluciones Recomendadas</h3>
+            <ol>
+                <li>Presiona <strong>Ctrl + F5</strong> para limpiar caché</li>
+                <li>Prueba en modo incógnito</li>
+                <li>Verifica que no tengas bookmarks con URLs antiguas</li>
+                <li>Usa las URLs correctas directamente</li>
+            </ol>
+        </div>
+
+        <div class="info-box success">
+            <h3>✅ Ir Directamente</h3>
+            <p><a href="https://vjlale.github.io/ALENIA-GESTION/landing_kontrol.html" style="color: #00ff00;">🎯 Ir a Landing Page</a></p>
+            <p><a href="https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html" style="color: #00ff00;">📄 Ir a Carta de Presentación</a></p>
+        </div>
+
+        <div class="info-box">
+            <h3>📋 Log de Navegación</h3>
+            <pre id="navigationLog"></pre>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar información de la página
+        document.getElementById('currentUrl').textContent = window.location.href;
+        document.getElementById('referrerUrl').textContent = document.referrer || 'No disponible';
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+        // Log de navegación
+        let navigationLog = [];
+        
+        function addLog(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            navigationLog.push(`[${timestamp}] ${message}`);
+            document.getElementById('navigationLog').textContent = navigationLog.join('\n');
+        }
+
+        addLog(`Página cargada. URL: ${window.location.href}`);
+        addLog(`Referrer: ${document.referrer || 'Ninguno'}`);
+
+        // Función para probar URLs
+        async function testUrl(url, name) {
+            const resultsDiv = document.getElementById('results');
+            addLog(`Probando ${name}: ${url}`);
+            
+            try {
+                const response = await fetch(url, { method: 'HEAD' });
+                const status = response.status;
+                const statusText = response.statusText;
+                
+                let statusClass = 'error';
+                if (status >= 200 && status < 300) statusClass = 'success';
+                else if (status >= 300 && status < 400) statusClass = 'warning';
+                
+                const result = `
+                    <div class="info-box ${statusClass}">
+                        <strong>${name.toUpperCase()}:</strong> ${status} ${statusText}
+                        <br><small>${url}</small>
+                    </div>
+                `;
+                resultsDiv.innerHTML += result;
+                addLog(`${name} respondió: ${status} ${statusText}`);
+                
+            } catch (error) {
+                const result = `
+                    <div class="info-box error">
+                        <strong>${name.toUpperCase()}:</strong> Error de conexión
+                        <br><small>${error.message}</small>
+                    </div>
+                `;
+                resultsDiv.innerHTML += result;
+                addLog(`Error en ${name}: ${error.message}`);
+            }
+        }
+
+        function clearCache() {
+            addLog('Intentando limpiar caché...');
+            
+            // Limpiar localStorage y sessionStorage
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Intentar limpiar caché del navegador (limitado por seguridad)
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    names.forEach(function(name) {
+                        caches.delete(name);
+                    });
+                });
+            }
+            
+            addLog('Caché local limpiado. Recarga la página con Ctrl+F5');
+            alert('Caché limpiado. Presiona Ctrl+F5 para recargar completamente.');
+        }
+
+        // Detectar si estamos en la URL problemática
+        if (window.location.href.includes('GESTION-KONTROL+ v2.3 Release')) {
+            addLog('🚨 DETECTADA URL PROBLEMÁTICA');
+            alert('¡URL problemática detectada! Redirigiendo a la URL correcta...');
+            setTimeout(() => {
+                window.location.href = 'https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

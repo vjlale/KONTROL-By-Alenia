@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM de Leads | Demo IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(95deg, #000b5f 0%, #afafaf 100%);
+            margin: 0;
+            color: #ffffff;
+        }
+        .crm-header {
+            background: linear-gradient(135deg, #011054 0%, #0d0d0d 100%);
+            color: #fff;
+            padding: 30px 40px 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .crm-header .logo {
+            height: 90px;
+            margin-right: 5px;
+            width: auto;
+            max-width: 160px;
+            object-fit: contain;
+        }
+        .crm-header .branding {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .crm-header .title {
+            font-size: 2em;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .crm-header .slogan {
+            font-size: 1em;
+            font-weight: 400;
+            margin-left: 10px;
+            color: #e0e0e0;
+        }
+        .crm-header .logout {
+            background: #040404;
+            color: #ff00ea;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.2s;
+        }
+        .crm-header .logout:hover {
+            background: #930000;
+        }
+        .crm-main {
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            background: linear-gradient(135deg, #3b4fab 0%, #242121 100%);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgb(234, 22, 22);
+            padding: 36px 32px 32px 32px;
+        }
+        .crm-main h2 {
+            font-size: 1.7em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .crm-main .subtitle {
+            color: #f0f1f6;
+            font-size: 1.1em;
+            margin-bottom: 24px;
+        }
+        .crm-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+        .crm-actions input[type="text"] {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #bfc6d1;
+            font-size: 1em;
+            width: 220px;
+        }
+        .crm-actions button {
+            background: #258305;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 22px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .crm-actions button:hover {
+            background: #1a6603;
+        }
+        .crm-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 18px;
+        }
+        .crm-table th, .crm-table td {
+            padding: 14px 10px;
+            text-align: left;
+        }
+        .crm-table th {
+            background: #3b4fab;
+            color: #fff;
+            font-weight: 700;
+        }
+        .crm-table tr {
+            transition: background 0.15s;
+        }
+        .crm-table tr:hover {
+            background: #0844eb;
+        }
+        .crm-table td.actions {
+            text-align: center;
+        }
+        .crm-table .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #ff0909;
+            font-size: 1.2em;
+            margin: 0 6px;
+            transition: color 0.2s;
+        }
+        .crm-table .icon-btn:hover {
+            color: #f3f3f3;
+        }
+        .crm-msg {
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #000000;
+        }
+        .crm-footer {
+            text-align: center;
+            color: #ffffff;
+            font-size: 1em;
+            margin: 40px 0 18px 0;
+        }
+        @media (max-width: 700px) {
+            .crm-header, .crm-main {
+                flex-direction: column;
+                padding: 18px 8px;
+            }
+            .crm-main {
+                padding: 18px 6px;
+            }
+            .crm-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Modal de detalles */
+        #detailsModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 14, 121, 0.35);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        #detailsModal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: #4c4a4a;
+            padding: 32px 24px;
+            border-radius: 14px;
+            min-width: 300px;
+            max-width: 90vw;
+            box-shadow: 0 8px 32px rgba(0, 62, 246, 0.964);
+            position: relative;
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.3em;
+            color: #faf8f8;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="crm-header">
+        <div class="branding">
+            <img src="../3.png" alt="Logo" class="logo">
+            <span class="title">CRM de Kontrol+</span>
+            <span class="slogan">Powered by Alen.iA</span>
+        </div>
+        <button class="logout">SALIR</button>
+    </div>
+    <div class="crm-main">
+        <h2>DESCARGAS</h2>
+        <div class="subtitle">Todos los registros de descarga en tu landing de Kontrol+</div>
+        <div class="crm-actions">
+            <input type="text" id="searchInput" placeholder="Buscar por email o rubro...">
+            <button id="exportBtn"><i class="fa-solid fa-file-csv"></i> Exportar CSV</button>
+        </div>
+        <div class="crm-msg" id="crmMsg">¡Bienvenido! Aquí verás todos los registros de descarga.</div>
+        <table class="crm-table" id="leadsTable">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Email</th>
+                    <th>Rubro</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="leadsTbody">
+                <tr><td colspan="4" style="text-align:center;">Cargando datos...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="crm-footer">
+        Desarrollado por <b>Alen.iA</b> | Contacto: info@alenia.com | Powered by Alen.iA
+    </div>
+    <!-- Modal de detalles -->
+    <div id="detailsModal">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3>Detalles del Lead</h3>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+    <script>
+    // --- INTEGRACIÓN DINÁMICA CON BACKEND FLASK ---
+    let allLeads = [];
+    const tbody = document.getElementById('leadsTbody');
+    const crmMsg = document.getElementById('crmMsg');
+
+    function renderLeads(leads) {
+        if (!leads.length) {
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No hay registros.</td></tr>';
+            return;
+        }
+        tbody.innerHTML = '';
+        leads.forEach(lead => {
+            const nombre = lead.nombre || '-';
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${lead.fecha}</td>
+                <td>${lead.email}</td>
+                <td>${lead.rubro}</td>
+                <td class="actions">
+                    <button class="icon-btn" title="Copiar email" onclick="copyEmail('${lead.email}')"><i class="fa-solid fa-copy"></i></button>
+                    <button class="icon-btn" title="Ver detalles" onclick="showDetails('${nombre}','${lead.email}','${lead.rubro}','${lead.fecha}')"><i class="fa-solid fa-eye"></i></button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    function copyEmail(email) {
+        navigator.clipboard.writeText(email).then(function() {
+            crmMsg.textContent = '¡Email copiado al portapapeles!';
+            crmMsg.style.color = '#258305';
+        });
+    }
+    function showDetails(nombre, email, rubro, fecha) {
+        document.getElementById('modalContent').innerHTML =
+            `<b>Nombre:</b> ${nombre || '-'}<br>`+
+            `<b>Email:</b> ${email}<br>`+
+            `<b>Rubro:</b> ${rubro}<br>`+
+            `<b>Fecha:</b> ${fecha}`;
+        document.getElementById('detailsModal').classList.add('active');
+    }
+    function closeModal() {
+        document.getElementById('detailsModal').classList.remove('active');
+    }
+
+    // Cargar leads desde el backend
+    function fetchLeads() {
+        fetch('https://alenia-gestion-production.up.railway.app/api/leads')
+            .then(res => res.json())
+            .then(data => {
+                allLeads = data;
+                renderLeads(allLeads);
+            })
+            .catch(() => {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#e89c2c;">No se pudo conectar al servidor.</td></tr>';
+            });
+    }
+    fetchLeads();
+
+    // Filtro de búsqueda
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const val = this.value.toLowerCase();
+        const filtered = allLeads.filter(lead =>
+            lead.email.toLowerCase().includes(val) ||
+            lead.rubro.toLowerCase().includes(val)
+        );
+        renderLeads(filtered);
+    });
+
+    // Exportar a CSV
+    document.getElementById('exportBtn').addEventListener('click', function() {
+        let csv = 'Fecha,Email,Rubro\n';
+        const val = document.getElementById('searchInput').value.toLowerCase();
+        const filtered = allLeads.filter(lead =>
+            lead.email.toLowerCase().includes(val) ||
+            lead.rubro.toLowerCase().includes(val)
+        );
+        filtered.forEach(lead => {
+            csv += `"${lead.fecha}","${lead.email}","${lead.rubro}"\n`;
+        });
+        const blob = new Blob([csv], {type: 'text/csv'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'leads.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+    </script>
+</body>
+</html>

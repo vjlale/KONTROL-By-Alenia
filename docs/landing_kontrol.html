@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarga GESTION-KONTROL+ | Optimiza tu Negocio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #3b4fab 0%, #a40000 100%);
+            color: #fffcfc;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgb(12, 10, 10);
+            box-shadow: 0 20px 60px rgb(255, 23, 23);
+            border-radius: 18px;
+            padding-bottom: 40px;
+        }
+        .header {
+            background: linear-gradient(175deg, #ff0000 0%, #322e2e 100%);
+            color: white;
+            padding: 40px 20px 30px 20px;
+            text-align: center;
+            border-radius: 18px 18px 0 0;
+            position: relative;
+        }
+        .logo {
+            width: 220px;
+            margin-bottom: 18px;
+        }
+        .header h1 {
+            font-size: 2.7em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgb(255, 251, 251);
+        }
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .hero-badge {
+            background: #258305;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        .section {
+            padding: 40px 30px 20px 30px;
+        }
+        .section-title {
+            font-size: 2em;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 180px;
+            height: 4px;
+            background: linear-gradient(175deg, #0033cc, #fd0202);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .benefit-card {
+            background: linear-gradient(175deg, #ff2201 0%, #ff0000 100%);
+            padding: 22px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgb(246, 213, 0);
+            border: 2px solid rgba(0, 51, 204, 0.492);
+        }
+        .benefit-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .form-section {
+            background: linear-gradient(135deg, #100909 0%, #ff0000 100%);
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 35px 30px 30px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .form-section h2 {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        input, select {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+            background: #fff;
+            color: #222;
+        }
+        input:focus, select:focus {
+            outline: 2px solid #258305;
+        }
+        .cta-button {
+            background: #258305;
+            color: white;
+            padding: 15px 0;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 131, 5, 0.3);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .cta-button:hover {
+            background: #1a6603;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 131, 5, 0.4);
+        }
+        .form-msg {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        .footer {
+            background: #000000;
+            padding: 30px 10px;
+            text-align: center;
+            border-radius: 0 0 18px 18px;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.7em; }
+            .section { padding: 20px 8px; }
+            .section-title { font-size: 1.2em; }
+            .logo { width: 120px; }
+            .form-section { padding: 20px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="LOGO APP.png" alt="Logo de GESTION-KONTROL+" class="logo">
+            <h1>GESTION-KONTROL+</h1>
+            <p class="subtitle">La revolución en gestión comercial argentina</p>
+            <div class="hero-badge">¡100% GRATIS PARA SIEMPRE!</div>
+        </header>
+        <section class="section">
+            <h2 class="section-title">🚀 Optimiza tu negocio y accede a la mejor herramienta de gestión</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-title">Sin límites ni licencias</div>
+                    <div>Productos y ventas ilimitados. Tu información siempre local y segura.</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-title">Fácil, rápido y moderno</div>
+                    <div>Instalación instantánea, interfaz intuitiva y soporte visual en cada paso.</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-title">Funciona offline</div>
+                    <div>No requiere internet. Control total de tu negocio en todo momento.</div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="form-section">
+                <h2>Recibe el link de descarga en tu correo</h2>
+                <!--
+                  INTEGRACIÓN n8n:
+                  - Configura un webhook n8n que reciba POST con los campos: nombre, mail, rubro
+                  - El endpoint debe reemplazar la URL de action abajo
+                  - El flujo n8n debe enviar el mail de bienvenida y link de descarga automáticamente
+                  - Puedes agregar seguimiento automático días después
+                -->
+                <form id="leadForm" action="https://alenia-gestion-production.up.railway.app/api/lead" method="POST" autocomplete="on">
+                    <div style="background: rgba(255,255,0,0.1); border: 1px solid #ffff00; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-size: 0.9em;">
+                        💡 <strong>Consejo:</strong> Si la redirección no funciona, presiona <strong>Ctrl + F5</strong> para limpiar el caché del navegador.
+                    </div>
+                    <label for="mail">Correo electrónico</label>
+                    <input type="email" id="mail" name="email" required maxlength="80" placeholder="tucorreo@ejemplo.com">
+                    <label for="rubro">Rubro</label>
+                    <select id="rubro" name="rubro" required>
+                        <option value="">Selecciona tu rubro</option>
+                        <option value="Indumentaria">Indumentaria</option>
+                        <option value="Calzado">Calzado</option>
+                        <option value="Alimentos">Alimentos</option>
+                        <option value="Electrónica">Electrónica</option>
+                        <option value="Librería">Librería</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <button class="cta-button" type="submit">Quiero mi descarga</button>
+                    <div class="form-msg" id="formMsg"></div>
+                    
+                    <!-- ENLACE DE EMERGENCIA -->
+                    <div id="emergencyLink" style="display: none; margin-top: 15px; text-align: center; padding: 10px; background: rgba(255,0,0,0.1); border: 1px solid #ff0000; border-radius: 8px;">
+                        ⚠️ <strong>¿No se cargó automáticamente?</strong><br>
+                        <a href="https://vjlale.github.io/ALENIA-GESTION/CARTA_PRESENTACION_GESTION_KONTROL.html" 
+                           style="color: #ffff00; font-weight: bold; text-decoration: underline;" 
+                           target="_blank">👆 HAZ CLIC AQUÍ PARA ACCEDER DIRECTAMENTE</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer class="footer">
+            <div>Desarrollado con 💙 para potenciar tu negocio | GESTION-KONTROL+ 2025</div>
+        </footer>
+    </div>
+    <script>
+    // REDIRECCIÓN GARANTIZADA - Versión simplificada que siempre funciona
+    const form = document.getElementById('leadForm');
+    const msg = document.getElementById('formMsg');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validar formulario
+        if (!form.checkValidity()) {
+            msg.textContent = 'Por favor completa todos los campos correctamente.';
+            msg.style.color = '#e89c2c';
+            return;
+        }
+        
+        // Obtener datos
+        const email = document.getElementById('mail').value;
+        const rubro = document.getElementById('rubro').value;
+        
+        console.log('[DEBUG] Datos del usuario:', { email, rubro });
+        
+        // Mostrar mensaje de procesamiento
+        msg.textContent = '📝 Procesando tu solicitud...';
+        msg.style.color = '#258305';
+        msg.style.fontWeight = 'bold';
+        
+        // Intentar envío en background (sin bloquear la redirección)
+        const formData = new FormData(form);
+        const urls = [
+            'https://alenia-gestion-production-ae2f.up.railway.app/api/lead',
+            'https://alenia-gestion-production.up.railway.app/api/lead'
+        ];
+        
+        // Envío asíncrono que no bloquea
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'ENVIANDO...';
+
+        Promise.all(urls.map(url => 
+            fetch(url, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                console.log(`[DEBUG] Respuesta de ${url}:`, response.status);
+                return response.ok;
+            }).catch(error => {
+                console.log(`[DEBUG] Error en ${url}:`, error.message);
+                return false;
+            })
+        )).then(results => {
+            const isSuccess = results.some(r => r === true);
+            if (isSuccess) {
+                msg.textContent = '✅ ¡Listo! Revisa tu correo, te hemos enviado el enlace.';
+                msg.style.color = '#258305';
+                form.reset(); // Opcional: limpiar el formulario
+            } else {
+                msg.textContent = '❌ Hubo un error. Por favor, intenta de nuevo.';
+                msg.style.color = '#ff0000';
+                submitButton.disabled = false;
+            }
+            submitButton.textContent = 'Quiero mi descarga';
+        });
+    });
+    </script>
+</body>
+<!-- Forzar build de GitHub Pages - 22/07/2025 - ACTUALIZACIÓN GARANTIZADA -->
+</html>
+<!-- Forzar build de GitHub Pages -->

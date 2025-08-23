@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CRM Railway</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-form { max-width: 400px; margin: 20px 0; }
+        input, select, button { display: block; width: 100%; margin: 10px 0; padding: 10px; }
+        button { background: #0033cc; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test CRM Railway Deploy</h1>
+    
+    <div class="test-form">
+        <h3>Probar Endpoint /api/lead</h3>
+        <input type="email" id="email" placeholder="test@ejemplo.com" value="test@ejemplo.com">
+        <select id="rubro">
+            <option value="Indumentaria">Indumentaria</option>
+            <option value="Calzado">Calzado</option>
+            <option value="Test">Test</option>
+        </select>
+        <button onclick="testLead()">📤 Enviar Lead</button>
+    </div>
+    
+    <div class="test-form">
+        <h3>Probar Endpoint /api/leads</h3>
+        <button onclick="testLeads()">📋 Ver Leads</button>
+    </div>
+    
+    <div id="result"></div>
+    
+    <script>
+        // REEMPLAZA ESTA URL CON LA DE TU RAILWAY
+        const RAILWAY_URL = 'https://TU-PROYECTO-production.up.railway.app';
+        
+        async function testLead() {
+            const email = document.getElementById('email').value;
+            const rubro = document.getElementById('rubro').value;
+            const result = document.getElementById('result');
+            
+            try {
+                const response = await fetch(`${RAILWAY_URL}/api/lead`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `email=${email}&rubro=${rubro}`
+                });
+                
+                const data = await response.json();
+                
+                if (data.ok) {
+                    result.innerHTML = '<div class="result success">✅ Lead registrado correctamente</div>';
+                } else {
+                    result.innerHTML = `<div class="result error">❌ Error: ${data.error}</div>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<div class="result error">❌ Error de conexión: ${error}</div>`;
+            }
+        }
+        
+        async function testLeads() {
+            const result = document.getElementById('result');
+            
+            try {
+                const response = await fetch(`${RAILWAY_URL}/api/leads`);
+                const leads = await response.json();
+                
+                let html = '<div class="result success"><h4>📊 Leads registrados:</h4><ul>';
+                leads.forEach(lead => {
+                    html += `<li>${lead.email} - ${lead.rubro} (${lead.fecha})</li>`;
+                });
+                html += '</ul></div>';
+                
+                result.innerHTML = html;
+            } catch (error) {
+                result.innerHTML = `<div class="result error">❌ Error obteniendo leads: ${error}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

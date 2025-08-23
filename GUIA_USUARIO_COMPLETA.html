@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Usuario - Alen.iA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: #e5e7eb;
+            background-color: #0f172a;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #1e293b;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #374151;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            border-bottom: 2px solid #4f46e5;
+            padding-bottom: 0.3em;
+        }
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; border-bottom: 1px solid #6b7280; }
+        p { margin-bottom: 1.2em; }
+        a {
+            color: #4f46e5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #818cf8;
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 1.2em;
+        }
+        li { margin-bottom: 0.5em; }
+        strong { font-weight: 700; color: #a5b4fc; }
+        code {
+            background-color: #0f172a;
+            padding: 0.2em 0.5em;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            border: 1px solid #374151;
+        }
+        pre {
+            background-color: #0f172a;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #374151;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+        pre code {
+            padding: 0;
+            background: none;
+            border: none;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #374151;
+            margin: 40px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #374151;
+        }
+        th {
+            background-color: #4f46e5;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        tr:nth-child(even) {
+            background-color: #2a3447;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GUÍA COMPLETA DE USUARIO - ALEN.IA</h1>
+        <h2>Sistema de Gestión Inteligente de Stock y Ventas</h2>
+        <hr>
+        
+        <h2>1. INTRODUCCIÓN</h2>
+        <h3>¿Qué es Alen.iA?</h3>
+        <p><strong>Alen.iA</strong> es un sistema moderno y completo de gestión de stock y ventas diseñado especialmente para pequeños y medianos negocios. Con una interfaz moderna e intuitiva, permite gestionar inventario, procesar ventas, generar reportes y obtener análisis inteligentes para optimizar tu negocio.</p>
+        
+        <h3>Características Principales</h3>
+        <ul>
+            <li>✅ <strong>Gestión de Inventario</strong>: Control completo de productos, stock, precios y categorías</li>
+            <li>✅ <strong>Sistema de Ventas</strong>: Procesamiento rápido de ventas con múltiples formas de pago</li>
+            <li>✅ <strong>Reportes Inteligentes</strong>: Análisis detallados de ventas por fechas, productos y métodos de pago</li>
+            <li>✅ <strong>Centro de IA</strong>: Sugerencias automáticas basadas en patrones de venta</li>
+            <li>✅ <strong>Sistema de Ofertas</strong>: Gestión de promociones y descuentos especiales</li>
+            <li>✅ <strong>Interfaz Moderna</strong>: Diseño profesional con tooltips y validación visual</li>
+            <li>✅ <strong>Multiplataforma</strong>: Funciona en Windows, compatible con todos los sistemas</li>
+        </ul>
+
+        <h3>Requisitos del Sistema</h3>
+        <ul>
+            <li><strong>Sistema Operativo</strong>: Windows 10 o superior</li>
+            <li><strong>Memoria RAM</strong>: Mínimo 4GB (recomendado 8GB)</li>
+            <li><strong>Espacio en Disco</strong>: 500MB libres</li>
+            <li><strong>Resolución de Pantalla</strong>: Mínimo 1280x720 pixels</li>
+        </ul>
+        <hr>
+
+        <h2>2. INSTALACIÓN Y CONFIGURACIÓN</h2>
+        <h3>Opción 1: Ejecutable Directo (RECOMENDADO)</h3>
+        <h4>Paso 1: Descarga</h4>
+        <ol>
+            <li>Descarga el archivo <code>Alen.iA.exe</code> desde el repositorio oficial</li>
+            <li>Guarda el archivo en una carpeta de tu elección (ej: <code>C:\AlenIA\</code>)</li>
+        </ol>
+        <h4>Paso 2: Primera Ejecución</h4>
+        <ol>
+            <li>Haz doble clic en <code>Alen.iA.exe</code></li>
+            <li>Si Windows muestra una advertencia de seguridad:
+                <ul>
+                    <li>Haz clic en "Más información"</li>
+                    <li>Selecciona "Ejecutar de todas formas"</li>
+                </ul>
+            </li>
+            <li>La aplicación se iniciará automáticamente</li>
+            <li>En la primera ejecución, el sistema creará los archivos de configuración necesarios</li>
+        </ol>
+        <h4>Paso 3: Verificación</h4>
+        <p>Verifica que se hayan creado los archivos:</p>
+        <ul>
+            <li><code>productos.json</code> (base de datos de productos)</li>
+            <li><code>ventas.json</code> (registro de ventas)</li>
+            <li><code>config.ini</code> (configuración del sistema)</li>
+        </ul>
+
+        <h3>Opción 2: Instalación desde Código Fuente</h3>
+        <h4>Paso 1: Requisitos Previos</h4>
+        <pre><code># Instalar Python 3.8 o superior
+python --version
+
+# Instalar dependencias
+pip install tkinter pillow</code></pre>
+        <h4>Paso 2: Descarga del Código</h4>
+        <ol>
+            <li>Descarga o clona el repositorio completo</li>
+            <li>Extrae todos los archivos en una carpeta</li>
+            <li>Asegúrate de tener todos los archivos de imagen (logos)</li>
+        </ol>
+        <h4>Paso 3: Ejecución</h4>
+        <pre><code># Navegar a la carpeta del proyecto
+cd ruta/del/proyecto
+
+# Ejecutar la aplicación
+python main.py</code></pre>
+        <hr>
+
+        <h2>3. PRIMEROS PASOS</h2>
+        <h3>Configuración Inicial</h3>
+        <h4>Primer Inicio</h4>
+        <p>Al iniciar Alen.iA por primera vez, verás la pantalla principal con el logo de la aplicación y cuatro botones principales:</p>
+        <ol>
+            <li><strong>💰 Venta</strong> - Para procesar nuevas ventas</li>
+            <li><strong>📊 Ventas del Día</strong> - Para ver el resumen diario</li>
+            <li><strong>🏦 Cierre de Caja</strong> - Para cerrar la caja al final del día</li>
+            <li><strong>⚙️ Menú Gestión</strong> - Para acceder a configuraciones avanzadas</li>
+        </ol>
+
+        <h4>Cargando tu Primer Producto</h4>
+        <p><strong>Opción A: Carga Individual</strong></p>
+        <ol>
+            <li>Haz clic en "⚙️ Menú Gestión"</li>
+            <li>Selecciona "📦 Agregar Producto"</li>
+            <li>Completa los campos requeridos:
+                <ul>
+                    <li><strong>Marca</strong>: Ej. "Nike", "Adidas", "Local"</li>
+                    <li><strong>Descripción</strong>: Ej. "Remera Deportiva"</li>
+                    <li><strong>Color</strong>: Ej. "Rojo", "Azul", "Negro"</li>
+                    <li><strong>Talle</strong>: Ej. "S", "M", "L", "XL"</li>
+                    <li><strong>Cantidad</strong>: Stock inicial</li>
+                    <li><strong>Precio Costo</strong>: Costo de adquisición</li>
+                    <li><strong>% Venta</strong>: Margen de ganancia para precio público</li>
+                    <li><strong>% Amigo</strong>: Margen especial para clientes preferenciales</li>
+                </ul>
+            </li>
+        </ol>
+        <p><strong>Opción B: Carga Masiva (RECOMENDADO)</strong></p>
+        <ol>
+            <li>Ve a "⚙️ Menú Gestión" → "📂 Carga Masiva de Productos"</li>
+            <li>Descarga el archivo modelo CSV</li>
+            <li>Completa el archivo con tus productos</li>
+            <li>Sube el archivo completado</li>
+        </ol>
+        
+        <h4>Tu Primera Venta</h4>
+        <ol>
+            <li>Regresa al menú principal</li>
+            <li>Haz clic en "💰 Venta"</li>
+            <li>Selecciona un producto del dropdown</li>
+            <li>Ingresa la cantidad deseada</li>
+            <li>Selecciona la forma de pago</li>
+            <li>Haz clic en "🛒 AGREGAR AL CARRITO"</li>
+            <li>Revisa los totales</li>
+            <li>Haz clic en "✅ FINALIZAR VENTA"</li>
+        </ol>
+        <hr>
+
+        <h2>4. MANUAL DE USO DETALLADO</h2>
+        <h3>Pantalla Principal</h3>
+        <p>La pantalla principal es tu centro de control. Desde aquí puedes acceder a todas las funcionalidades principales:</p>
+        <h4>Botones Principales:</h4>
+        <p><strong>💰 VENTA</strong></p>
+        <ul>
+            <li><strong>Función</strong>: Procesar nuevas ventas</li>
+            <li><strong>Acceso Directo</strong>: Ctrl+V</li>
+            <li><strong>Tooltip</strong>: "Registrar nueva venta - Agregar productos al carrito y procesar pagos"</li>
+        </ul>
+        <p><strong>📊 VENTAS DEL DÍA</strong></p>
+        <ul>
+            <li><strong>Función</strong>: Ver resumen de ventas diarias</li>
+            <li><strong>Información</strong>: Muestra todas las ventas del día actual</li>
+            <li><strong>Tooltip</strong>: "Ver resumen de ventas del día actual - Control de ingresos diarios"</li>
+        </ul>
+        <p><strong>🏦 CIERRE DE CAJA</strong></p>
+        <ul>
+            <li><strong>Función</strong>: Cerrar la caja al final del día</li>
+            <li><strong>Incluye</strong>: Generación de reportes CSV</li>
+            <li><strong>Tooltip</strong>: "Realizar cierre de caja - Generar reporte y archivar ventas"</li>
+        </ul>
+        <p><strong>⚙️ MENÚ GESTIÓN</strong></p>
+        <ul>
+            <li><strong>Función</strong>: Acceso a configuraciones avanzadas</li>
+            <li><strong>Incluye</strong>: Gestión de productos, precios, inventario y reportes</li>
+            <li><strong>Tooltip</strong>: "Acceder a herramientas de gestión - Productos, precios e inventario"</li>
+        </ul>
+
+        <h3>Sistema de Ventas Detallado</h3>
+        <h4>Procesando una Venta Paso a Paso</h4>
+        <p><strong>Paso 1: Selección de Producto</strong></p>
+        <ul>
+            <li>Campo de búsqueda inteligente con filtrado en tiempo real</li>
+            <li>Muestra: Descripción | Color | Talle | Stock disponible</li>
+            <li><strong>Tip</strong>: Puedes escribir para filtrar los productos rápidamente</li>
+        </ul>
+        <p><strong>Paso 2: Cantidad y Precio</strong></p>
+        <ul>
+            <li><strong>Validación Automática</strong>: El sistema verifica stock disponible</li>
+            <li><strong>Cálculo Automático</strong>: El precio se completa automáticamente</li>
+            <li><strong>Ofertas</strong>: Si hay ofertas activas, se aplican automáticamente</li>
+        </ul>
+        <p><strong>Paso 3: Forma de Pago</strong></p>
+        <p>Opciones disponibles:</p>
+        <ul>
+            <li>EFECTIVO</li>
+            <li>DÉBITO</li>
+            <li>CRÉDITO</li>
+            <li>TRANSFERENCIA</li>
+            <li>QR</li>
+            <li>OTROS</li>
+        </ul>
+        <p><strong>Paso 4: Carrito de Compras</strong></p>
+        <ul>
+            <li>Vista detallada de productos agregados</li>
+            <li>Cálculo automático de IVA (21%)</li>
+            <li>Subtotales y total general</li>
+            <li>Opción de eliminar productos del carrito</li>
+        </ul>
+        <p><strong>Paso 5: Finalización</strong></p>
+        <ul>
+            <li>Verificación final de totales</li>
+            <li>Actualización automática de stock</li>
+            <li>Generación de número de venta único</li>
+            <li>Confirmación de registro exitoso</li>
+        </ul>
+        <h4>Funciones Avanzadas del Sistema de Ventas</h4>
+        <p><strong>Ofertas Automáticas</strong></p>
+        <p>El sistema detecta y aplica automáticamente:</p>
+        <ul>
+            <li><strong>Ofertas por Cantidad</strong>: Ej. "3x2" - Paga 2, lleva 3</li>
+            <li><strong>Ofertas por Porcentaje</strong>: Ej. "20% de descuento"</li>
+            <li><strong>Precios Especiales</strong>: Precios fijos promocionales</li>
+        </ul>
+        <p><strong>Validación Visual</strong></p>
+        <ul>
+            <li>Campos con borde verde: Datos válidos</li>
+            <li>Campos con borde rojo: Datos inválidos o faltantes</li>
+            <li>Tooltips de error con mensajes explicativos</li>
+        </ul>
+        <hr>
+
+        <h2>5. FUNCIONALIDADES PRINCIPALES</h2>
+        <h3>Gestión de Inventario</h3>
+        <h4>Agregar Productos Individualmente</h4>
+        <p><strong>Campos Requeridos:</strong></p>
+        <ol>
+            <li><strong>Marca</strong>: Identificación de la marca o proveedor</li>
+            <li><strong>Descripción</strong>: Descripción detallada del producto</li>
+            <li><strong>Color</strong>: Color específico del producto</li>
+            <li><strong>Talle</strong>: Talla o tamaño (puede usar texto libre)</li>
+            <li><strong>Cantidad</strong>: Stock inicial disponible</li>
+            <li><strong>Precio Costo</strong>: Costo de adquisición del producto</li>
+            <li><strong>% Venta</strong>: Margen de ganancia para precio público</li>
+            <li><strong>% Amigo</strong>: Margen especial para precio preferencial</li>
+        </ol>
+        <p><strong>Cálculos Automáticos:</strong></p>
+        <ul>
+            <li>Precio Venta = Precio Costo × (1 + % Venta / 100)</li>
+            <li>Precio Amigo = Precio Costo × (1 + % Amigo / 100)</li>
+        </ul>
+        <h4>Carga Masiva de Productos</h4>
+        <p><strong>Ventajas:</strong></p>
+        <ul>
+            <li>Carga rápida de múltiples productos</li>
+            <li>Formato estándar CSV</li>
+            <li>Validación automática de datos</li>
+            <li>Backup automático antes de la carga</li>
+        </ul>
+        <p><strong>Formato del Archivo CSV:</strong></p>
+        <pre><code>marca,descripcion,color,talle,cantidad,precio_costo,porcentaje_venta,porcentaje_amigo
+Nike,Remera,Rojo,M,10,1000,50,20
+Adidas,Pantalón,Azul,L,5,2000,60,25
+Local,Gorra,Negro,U,15,500,80,30</code></pre>
+        <p><strong>Proceso de Carga:</strong></p>
+        <ol>
+            <li>Descargar archivo modelo</li>
+            <li>Completar con datos de productos</li>
+            <li>Guardar como CSV</li>
+            <li>Subir archivo al sistema</li>
+            <li>Verificar productos cargados</li>
+        </ol>
+        <h4>Actualización de Precios</h4>
+        <p><strong>Funcionalidades:</strong></p>
+        <ul>
+            <li>Búsqueda de productos por marca/descripción</li>
+            <li>Modificación de precios de costo</li>
+            <li>Recálculo automático de precios de venta</li>
+            <li>Historial de cambios de precios</li>
+        </ul>
+        <h3>Sistema de Reportes</h3>
+        <h4>Ventas del Día</h4>
+        <ul>
+            <li><strong>Vista</strong>: Lista completa de ventas diarias</li>
+            <li><strong>Información</strong>: Detalle de productos, cantidades, precios</li>
+            <li><strong>Totales</strong>: Cálculo automático de ingresos del día</li>
+            <li><strong>Filtros</strong>: Por forma de pago, fecha, producto</li>
+        </ul>
+        <h4>Reportes Avanzados</h4>
+        <ul>
+            <li><strong>Por Fechas</strong>: Selección de rango de fechas específico</li>
+            <li><strong>Por Productos</strong>: Análisis de productos más vendidos</li>
+            <li><strong>Por Marcas</strong>: Rendimiento por marca</li>
+            <li><strong>Por Formas de Pago</strong>: Distribución de métodos de pago</li>
+        </ul>
+        <h4>Cierre de Caja</h4>
+        <p><strong>Proceso Automático:</strong></p>
+        <ol>
+            <li>Cálculo total de ventas del día</li>
+            <li>Desglose por formas de pago</li>
+            <li>Generación de archivo CSV detallado</li>
+            <li>Archivo de ventas para histórico</li>
+            <li>Reinicio de contador diario</li>
+        </ol>
+        <p><strong>Archivo CSV de Cierre Incluye:</strong></p>
+        <ul>
+            <li>Detalle de cada venta</li>
+            <li>Totales por forma de pago</li>
+            <li>Resumen de productos vendidos</li>
+            <li>Información de IVA</li>
+            <li>Totales generales</li>
+        </ul>
+        <h3>Centro de Inteligencia Artificial</h3>
+        <h4>Análisis Predictivo</h4>
+        <ul>
+            <li><strong>Productos con Stock Bajo</strong>: Alertas automáticas</li>
+            <li><strong>Tendencias de Venta</strong>: Análisis de patrones</li>
+            <li><strong>Sugerencias de Reposición</strong>: Basado en velocidad de venta</li>
+            <li><strong>Análisis de Rentabilidad</strong>: Productos más y menos rentables</li>
+        </ul>
+        <h4>Sugerencias Automáticas</h4>
+        <ul>
+            <li><strong>Ofertas Recomendadas</strong>: Basadas en stock y rotación</li>
+            <li><strong>Precios Optimizados</strong>: Sugerencias de ajustes de precios</li>
+            <li><strong>Stock Óptimo</strong>: Recomendaciones de niveles de inventario</li>
+        </ul>
+        <h3>Sistema de Ofertas</h3>
+        <h4>Tipos de Ofertas Disponibles</h4>
+        <p><strong>1. Ofertas por Cantidad (3x2, 2x1, etc.)</strong></p>
+        <ul>
+            <li>Configuración flexible de cantidades</li>
+            <li>Aplicación automática en ventas</li>
+            <li>Cálculo correcto de totales</li>
+        </ul>
+        <p><strong>2. Ofertas por Porcentaje</strong></p>
+        <ul>
+            <li>Descuentos del 10%, 20%, 50%, etc.</li>
+            <li>Aplicación sobre precio de venta</li>
+            <li>Visualización clara en carrito</li>
+        </ul>
+        <p><strong>3. Precios Especiales</strong></p>
+        <ul>
+            <li>Precios fijos promocionales</li>
+            <li>Temporales o permanentes</li>
+            <li>Override de precios calculados</li>
+        </ul>
+        <h4>Gestión de Ofertas</h4>
+        <ul>
+            <li><strong>Crear</strong>: Definir tipo, valor y productos aplicables</li>
+            <li><strong>Modificar</strong>: Cambiar parámetros de ofertas existentes</li>
+            <li><strong>Eliminar</strong>: Quitar ofertas vencidas</li>
+            <li><strong>Activar/Desactivar</strong>: Control de vigencia</li>
+        </ul>
+        <hr>
+
+        <h2>6. RESOLUCIÓN DE PROBLEMAS</h2>
+        <h3>Problemas Comunes y Soluciones</h3>
+        <h4>La aplicación no inicia</h4>
+        <p><strong>Síntomas</strong>: Doble clic no abre la aplicación</p>
+        <p><strong>Soluciones</strong>:</p>
+        <ol>
+            <li>Verificar que el archivo .exe no esté corrupto</li>
+            <li>Ejecutar como administrador (clic derecho → "Ejecutar como administrador")</li>
+            <li>Verificar que no haya procesos de Alen.iA ejecutándose (Task Manager)</li>
+            <li>Reinstalar en una carpeta diferente</li>
+        </ol>
+        <h4>Error "No se puede cargar el logo"</h4>
+        <p><strong>Síntomas</strong>: La aplicación inicia pero no muestra el logo</p>
+        <p><strong>Soluciones</strong>:</p>
+        <ol>
+            <li>Verificar que los archivos de imagen estén en la misma carpeta:
+                <ul>
+                    <li><code>LOGO APP.png</code></li>
+                    <li><code>7.PNG</code></li>
+                    <li><code>LOGONOMBRE.png</code></li>
+                </ul>
+            </li>
+            <li>Verificar permisos de lectura en la carpeta</li>
+            <li>Reinstalar la aplicación completa</li>
+        </ol>
+        <h4>Productos no se guardan</h4>
+        <p><strong>Síntomas</strong>: Los productos agregados desaparecen al reiniciar</p>
+        <p><strong>Soluciones</strong>:</p>
+        <ol>
+            <li>Verificar permisos de escritura en la carpeta</li>
+            <li>Verificar que <code>productos.json</code> no esté bloqueado</li>
+            <li>Ejecutar como administrador</li>
+            <li>Cambiar ubicación de instalación</li>
+        </ol>
+        <h4>Ventas no se registran</h4>
+        <p><strong>Síntomas</strong>: Las ventas no quedan guardadas</p>
+        <p><strong>Soluciones</strong>:</p>
+        <ol>
+            <li>Verificar archivo <code>ventas.json</code></li>
+            <li>Verificar permisos de escritura</li>
+            <li>Reiniciar la aplicación</li>
+            <li>Verificar espacio en disco disponible</li>
+        </ol>
+        <h4>Errores de cálculo</h4>
+        <p><strong>Síntomas</strong>: Precios o totales incorrectos</p>
+        <p><strong>Soluciones</strong>:</p>
+        <ol>
+            <li>Verificar configuración de porcentajes</li>
+            <li>Revisar ofertas activas</li>
+            <li>Actualizar precios de productos</li>
+            <li>Reiniciar la aplicación</li>
+        </ol>
+        <h4>Problemas de rendimiento</h4>
+        <p><strong>Síntomas</strong>: La aplicación va lenta</p>
+        <p><strong>Soluciones</strong>:</p>
+        <ol>
+            <li>Cerrar otras aplicaciones pesadas</li>
+            <li>Verificar cantidad de productos (máximo recomendado: 10,000)</li>
+            <li>Realizar limpieza de archivos temporales</li>
+            <li>Aumentar memoria RAM si es posible</li>
+        </ol>
+        <h3>Respaldo y Recuperación</h3>
+        <h4>Archivos Importantes a Respaldar</h4>
+        <pre><code>productos.json          (Base de datos de productos)
+ventas.json            (Ventas del día actual)
+ventas_historico_*.json (Historial de ventas)
+config.ini             (Configuración del sistema)</code></pre>
+        <h4>Proceso de Respaldo</h4>
+        <ol>
+            <li>Cerrar la aplicación Alen.iA</li>
+            <li>Copiar los archivos listados arriba</li>
+            <li>Guardar en ubicación segura (USB, nube, etc.)</li>
+            <li>Realizar respaldos semanalmente</li>
+        </ol>
+        <h4>Proceso de Recuperación</h4>
+        <ol>
+            <li>Cerrar la aplicación si está abierta</li>
+            <li>Reemplazar archivos dañados con los respaldados</li>
+            <li>Reiniciar la aplicación</li>
+            <li>Verificar que los datos se carguen correctamente</li>
+        </ol>
+        <hr>
+
+        <h2>7. SOPORTE TÉCNICO</h2>
+        <h3>Contacto y Ayuda</h3>
+        <h4>Información del Desarrollador</h4>
+        <ul>
+            <li><strong>Proyecto</strong>: Alen.iA - Sistema de Gestión Inteligente</li>
+            <li><strong>Versión</strong>: 2.0 (Modernizada)</li>
+            <li><strong>Repositorio</strong>: GitHub - ALENIA-GESTION</li>
+            <li><strong>Licencia</strong>: Código Abierto</li>
+        </ul>
+        <h4>Reportar Problemas</h4>
+        <p>Para reportar bugs o problemas:</p>
+        <ol>
+            <li>Describir el problema detalladamente</li>
+            <li>Incluir pasos para reproducir el error</li>
+            <li>Adjuntar capturas de pantalla si es posible</li>
+            <li>Especificar versión de Windows y características del PC</li>
+        </ol>
+        <h4>Solicitar Nuevas Funcionalidades</h4>
+        <p>Si necesitas una funcionalidad específica:</p>
+        <ol>
+            <li>Describir la funcionalidad deseada</li>
+            <li>Explicar el caso de uso</li>
+            <li>Proporcionar ejemplos si es posible</li>
+        </ol>
+        <h3>Actualizaciones</h3>
+        <h4>Cómo Actualizar</h4>
+        <ol>
+            <li>Descargar la nueva versión de <code>Alen.iA.exe</code></li>
+            <li>Hacer respaldo de datos actuales</li>
+            <li>Reemplazar el ejecutable anterior</li>
+            <li>Iniciar la nueva versión</li>
+            <li>Verificar que todos los datos estén intactos</li>
+        </ol>
+        <h4>Log de Cambios</h4>
+        <ul>
+            <li><strong>v2.0</strong>: Modernización completa de interfaz, tooltips, validación visual</li>
+            <li><strong>v1.5</strong>: Sistema de ofertas, centro de IA</li>
+            <li><strong>v1.0</strong>: Versión inicial básica</li>
+        </ul>
+        <h3>Notas Finales</h3>
+        <h4>Recomendaciones de Uso</h4>
+        <ul>
+            <li>Realizar respaldos regulares</li>
+            <li>Mantener actualizados los precios</li>
+            <li>Usar el cierre de caja diariamente</li>
+            <li>Revisar reportes semanalmente</li>
+            <li>Aprovechar las sugerencias de IA</li>
+        </ul>
+        <h4>Limitaciones Conocidas</h4>
+        <ul>
+            <li>Máximo recomendado: 10,000 productos diferentes</li>
+            <li>Archivo de ventas crece con el tiempo (recomendable archivo mensual)</li>
+            <li>Requiere permisos de escritura en la carpeta de instalación</li>
+        </ul>
+        <h4>Recursos Adicionales</h4>
+        <ul>
+            <li>Manual de usuario (este documento)</li>
+            <li>Archivo de ejemplo de productos CSV</li>
+            <li>Archivos de configuración de ejemplo</li>
+        </ul>
+        <hr>
+        <p style="text-align: center;"><strong>¡Gracias por usar Alen.iA!</strong></p>
+        <p style="text-align: center;"><em>Sistema desarrollado para optimizar la gestión de tu negocio con tecnología moderna e intuitiva.</em></p>
+        <hr>
+        <p style="text-align: center; font-size: 0.9em; opacity: 0.8;">
+            <em>Documento creado: Julio 2025</em><br>
+            <em>Versión del Manual: 2.0</em><br>
+            <em>Para Alen.iA v2.0 - Edición Modernizada</em>
+        </p>
+    </div>
+</body>
+</html>

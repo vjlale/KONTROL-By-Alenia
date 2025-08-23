@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEN.IA - Gestión Kontrol+ | Software de Gestión Inteligente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e5e7eb;
+            background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1f2937 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: #4f46e5;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #111827 50%, #1f2937 100%);
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 6rem 0;
+            background: #111827;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #e5e7eb;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            opacity: 0.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #1f2937;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #374151;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4f46e5;
+        }
+
+        /* Screen Showcase */
+        .screens {
+            padding: 6rem 0;
+            background: #0f172a;
+        }
+
+        .screen-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6rem;
+            gap: 4rem;
+        }
+
+        .screen-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .screen-content {
+            flex: 1;
+        }
+
+        .screen-image {
+            flex: 1;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .screen-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #4f46e5;
+        }
+
+        .screen-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .feature-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 0;
+            background: #111827;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #4f46e5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1f2937 0%, #0f172a 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer p {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .screen-item {
+                flex-direction: column !important;
+                gap: 2rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Button Styles */
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">ALEN.IA Gestión Kontrol+</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#pantallas">Pantallas</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#descargar">Descargar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>ALEN.IA Gestión Kontrol+</h1>
+            <p>Software de Gestión Inteligente para tu Negocio. Control completo de inventario, ventas y análisis con IA integrada.</p>
+            <a href="#descargar" class="cta-button">🚀 Descargar Gratis</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="funcionalidades" class="features">
+        <div class="container">
+            <h2 class="section-title">Funcionalidades Principales</h2>
+            <p class="section-subtitle">Todo lo que necesitas para gestionar tu negocio de manera profesional</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Sistema de Ventas</h3>
+                    <p>Carrito de compras moderno con múltiples formas de pago, cálculo automático de IVA y sistema de ofertas integrado.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Gestión de Inventario</h3>
+                    <p>Control completo de stock, carga masiva por CSV, categorización por marca/color/talle y alertas de stock bajo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Reportes y Análisis</h3>
+                    <p>Reportes detallados por fechas, productos y formas de pago. Cierre de caja automático con exportación a CSV.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>Sugerencias de reposición, análisis de tendencias, alertas predictivas y optimización automática de precios.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Sistema de Ofertas</h3>
+                    <p>Ofertas 3x2, 2x1, descuentos por porcentaje, precios especiales y aplicación automática en el carrito.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Sin Internet Requerido</h3>
+                    <p>Funciona completamente offline. Tus datos siempre seguros y bajo tu control en tu propio equipo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screens Showcase -->
+    <section id="pantallas" class="screens">
+        <div class="container">
+            <h2 class="section-title">Recorrido por las Pantallas</h2>
+            <p class="section-subtitle">Descubre cada funcionalidad del software paso a paso</p>
+
+            <!-- Pantalla Principal -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">🏠 Pantalla Principal</h3>
+                    <p class="screen-description">
+                        La pantalla de inicio te da acceso rápido a todas las funciones principales del software con un diseño moderno y intuitivo.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Acceso directo a Nueva Venta</li>
+                        <li>Consulta rápida de Ventas del Día</li>
+                        <li>Entrada al Menú de Gestión</li>
+                        <li>Diseño con gradientes modernos</li>
+                        <li>Navegación intuitiva</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver detalles técnicos</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/PRINCIPAL.jpeg" alt="Pantalla Principal" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Nueva Venta -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">💰 Nueva Venta</h3>
+                    <p class="screen-description">
+                        Sistema completo de ventas con carrito de compras, autocompletado de productos y cálculos automáticos de totales e IVA.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Autocompletado inteligente de productos</li>
+                        <li>Carrito de compras dinámico</li>
+                        <li>Cálculo automático de IVA (21%)</li>
+                        <li>Múltiples formas de pago</li>
+                        <li>Aplicación automática de ofertas</li>
+                        <li>Validación visual en tiempo real</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver proceso de venta</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/NUEVA VENTA.jpeg" alt="Nueva Venta" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(4, 203, 230, 0.2);">
+                </div>
+            </div>
+
+            <!-- Ventas del Día -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">📊 Ventas del Día</h3>
+                    <p class="screen-description">
+                        Resumen completo de todas las ventas del día actual con totales por forma de pago y opción de cierre de caja.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Lista detallada de ventas del día</li>
+                        <li>Totales por forma de pago</li>
+                        <li>Resumen de IVA recaudado</li>
+                        <li>Cierre de caja automático</li>
+                        <li>Exportación a CSV</li>
+                        <li>Archivo histórico automático</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver reportes</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/2/pantalla ventas del dia.png" alt="Ventas del Día" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Menú de Gestión -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">⚙️ Menú de Gestión</h3>
+                    <p class="screen-description">
+                        Centro de control con todas las herramientas administrativas organizadas en categorías para fácil acceso.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Gestión de productos e inventario</li>
+                        <li>Herramientas de reportes avanzados</li>
+                        <li>Sistema de ofertas y promociones</li>
+                        <li>Centro de Inteligencia Artificial</li>
+                        <li>Carga masiva de productos</li>
+                        <li>Configuraciones del sistema</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Explorar gestión</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/2/PANTALLA MENU.png" alt="Menú de Gestión" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Alta de Producto -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">📝 Alta de Producto</h3>
+                    <p class="screen-description">
+                        Formulario intuitivo para agregar nuevos productos con cálculo automático de precios y validación en tiempo real.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Campos con placeholders informativos</li>
+                        <li>Cálculo automático de precios de venta</li>
+                        <li>Precio especial para amigos</li>
+                        <li>Validación visual de campos</li>
+                        <li>Tooltips explicativos</li>
+                        <li>Guardado automático</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver formulario</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/AGREGAR NUEVO PRODUCTO.jpeg" alt="Alta de Producto" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Inventario -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">📋 Inventario</h3>
+                    <p class="screen-description">
+                        Vista completa del inventario con búsqueda avanzada, filtros, ordenamiento y acciones masivas sobre productos.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Tabla con ordenamiento por columnas</li>
+                        <li>Búsqueda y filtros avanzados</li>
+                        <li>Resaltado de productos con stock bajo</li>
+                        <li>Edición y eliminación de productos</li>
+                        <li>Exportación del inventario</li>
+                        <li>Valorización total del stock</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver inventario</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/INVENTARIO.jpeg" alt="Inventario" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Carga Masiva -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">📂 Carga Masiva</h3>
+                    <p class="screen-description">
+                        Importación masiva de productos desde archivos CSV con validación automática y descarga de plantilla modelo.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Descarga de archivo modelo CSV</li>
+                        <li>Validación automática de datos</li>
+                        <li>Previsualización antes de importar</li>
+                        <li>Detección de errores en tiempo real</li>
+                        <li>Importación por lotes</li>
+                        <li>Reporte de importación</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver proceso</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/REPORTES.jpeg" alt="Carga Masiva" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Reportes -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">📈 Reportes Avanzados</h3>
+                    <p class="screen-description">
+                        Sistema completo de reportes con filtros por fechas, productos, formas de pago y exportación de resultados.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Filtros por rango de fechas</li>
+                        <li>Análisis por productos y marcas</li>
+                        <li>Estadísticas por forma de pago</li>
+                        <li>Gráficos y visualizaciones</li>
+                        <li>Exportación a CSV</li>
+                        <li>Histórico de ventas completo</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver reportes</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/REPORTES.jpeg" alt="Reportes Avanzados" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Ofertas -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">🎁 Gestión de Ofertas</h3>
+                    <p class="screen-description">
+                        Creación y administración de ofertas especiales con diferentes tipos de descuentos y promociones.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Ofertas por porcentaje de descuento</li>
+                        <li>Ofertas por cantidad (3x2, 2x1)</li>
+                        <li>Precios especiales manuales</li>
+                        <li>Aplicación automática en ventas</li>
+                        <li>Gestión de ofertas activas</li>
+                        <li>Historial de promociones</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver ofertas</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/OFERTAS.jpeg" alt="Gestión de Ofertas" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Centro IA -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">🤖 Centro de Inteligencia Artificial</h3>
+                    <p class="screen-description">
+                        Dashboard inteligente con análisis predictivos, sugerencias de reposición y optimización automática de precios.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Dashboard con métricas clave</li>
+                        <li>Sugerencias de reposición inteligente</li>
+                        <li>Análisis de tendencias de venta</li>
+                        <li>Optimización de precios por IA</li>
+                        <li>Alertas predictivas</li>
+                        <li>Categorización automática de productos</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver IA</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/PANEL INTELIGENTE.jpeg" alt="Centro de IA" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Reposición IA -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">🔄 Sugerencias de Reposición IA</h3>
+                    <p class="screen-description">
+                        Algoritmos inteligentes que analizan patrones de venta para sugerir qué productos reponer y cuándo.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Análisis de patrones de venta</li>
+                        <li>Cálculo de días de stock restante</li>
+                        <li>Priorización por urgencia</li>
+                        <li>Sugerencias de cantidad a reponer</li>
+                        <li>Configuración de umbrales</li>
+                        <li>Alertas automáticas</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver algoritmo</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/2/pantalla IA.png" alt="Sugerencias de Reposición IA" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <!-- Análisis de Precios IA -->
+            <div class="screen-item">
+                <div class="screen-content">
+                    <h3 class="screen-title">💰 Análisis de Precios IA</h3>
+                    <p class="screen-description">
+                        Análisis inteligente de precios basado en rotación, márgenes y tendencias del mercado para optimizar rentabilidad.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Análisis de márgenes de ganancia</li>
+                        <li>Evaluación de rotación de productos</li>
+                        <li>Sugerencias de ajuste de precios</li>
+                        <li>Comparativa de rentabilidad</li>
+                        <li>Optimización automática</li>
+                        <li>Reportes de performance</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Ver análisis</a>
+                </div>
+                <div class="screen-image">
+                    <img src="screenshot/PANEL INTELIGENTE.jpeg" alt="Análisis de Precios IA" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir ALEN.IA?</h2>
+            <p class="section-subtitle">Ventajas que marcan la diferencia en tu negocio</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Sin Instalación Compleja</h3>
+                    <p>Solo descarga y ejecuta. No requiere instalación ni configuraciones complicadas.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>Datos Seguros</h3>
+                    <p>Tus datos siempre bajo tu control. Funciona completamente offline en tu equipo.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Completamente Gratuito</h3>
+                    <p>Sin licencias, sin límites, sin costos ocultos. Software libre para tu negocio.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Alto Rendimiento</h3>
+                    <p>Optimizado para funcionar rápidamente incluso con miles de productos y ventas.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Diseño Moderno</h3>
+                    <p>Interfaz elegante y profesional que facilita el trabajo diario.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔧</div>
+                    <h3>Fácil de Usar</h3>
+                    <p>Diseñado para ser intuitivo desde el primer día, sin curva de aprendizaje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="descargar" class="cta-section">
+        <div class="container">
+            <h2>¿Listo para transformar tu negocio?</h2>
+            <p>Descarga ALEN.IA Gestión Kontrol+ y comienza a gestionar tu inventario y ventas de manera profesional.</p>
+            <a href="#" class="cta-button">📥 Descargar Ahora - Gratis</a>
+            
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #374151;">
+                <h3 style="margin-bottom: 1rem; color: #4f46e5;">Requisitos del Sistema</h3>
+                <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: left;">
+                    <div>
+                        <strong>🖥️ Sistema:</strong> Windows 10/11<br>
+                        <strong>💾 RAM:</strong> 4GB mínimo<br>
+                        <strong>💿 Espacio:</strong> 500MB libres
+                    </div>
+                    <div>
+                        <strong>📱 Pantalla:</strong> 1280x720 mínimo<br>
+                        <strong>🌐 Internet:</strong> No requerido<br>
+                        <strong>📄 Licencia:</strong> Completamente gratuito
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 ALEN.IA Gestión Kontrol+. Desarrollado con 💙 para optimizar la gestión de pequeños y medianos negocios.</p>
+            <p style="margin-top: 1rem; opacity: 0.6;">Versión 2.2+ | Software libre y gratuito | Compatible con Windows 10/11</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll('.screen-item, .feature-card, .benefit-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
+
