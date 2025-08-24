@@ -1,6 +1,5 @@
 # Ignorar archivos del software de escritorio para Railway deploy
 main.py
-*.db
 __pycache__/
 .venv/
 .vscode/
@@ -14,3 +13,4 @@ dist/
 ventas.json
 productos.json
 ventas_historico_*.json
+# Importante: no ignores *.db si quieres subir una DB de ejemplo

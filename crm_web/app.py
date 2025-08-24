@@ -6,7 +6,10 @@ import os
 
 app = Flask(__name__)
 CORS(app)  # Permitir solicitudes desde cualquier origen (ajustar origins=[...]) si se desea restringir
-DB = 'crm_leads.db'
+
+# Ruta de DB configurable para despliegues con volumen
+DB = os.environ.get('DB', 'crm_leads.db')
+os.makedirs(os.path.dirname(DB), exist_ok=True) if os.path.dirname(DB) else None
 
 # Inicializar la base de datos
 def init_db():

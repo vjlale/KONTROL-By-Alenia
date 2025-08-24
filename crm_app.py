@@ -2,22 +2,31 @@ from flask import Flask, request, render_template_string, redirect, jsonify
 from flask_cors import CORS
 import sqlite3
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 CORS(app)  # Permitir requests desde GitHub Pages
-DB = 'crm_leads.db'
+
+# Ruta de DB configurable por variable de entorno (para Volumes en Railway)
+DB = os.environ.get('DB', 'crm_leads.db')
+
+# Crear carpeta si la DB apunta a un directorio (por ejemplo, /data/crm_leads.db)
+os.makedirs(os.path.dirname(DB), exist_ok=True) if os.path.dirname(DB) else None
 
 # Inicializar la base de datos
-conn = sqlite3.connect(DB)
-c = conn.cursor()
-c.execute('''CREATE TABLE IF NOT EXISTS leads (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    email TEXT NOT NULL,
-    rubro TEXT NOT NULL,
-    fecha TEXT NOT NULL
-)''')
-conn.commit()
-conn.close()
+def _init_db():
+    conn = sqlite3.connect(DB)
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS leads (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        email TEXT NOT NULL,
+        rubro TEXT NOT NULL,
+        fecha TEXT NOT NULL
+    )''')
+    conn.commit()
+    conn.close()
+
+_init_db()
 
 # Endpoint para recibir datos del formulario (POST)
 @app.route('/api/lead', methods=['POST'])
