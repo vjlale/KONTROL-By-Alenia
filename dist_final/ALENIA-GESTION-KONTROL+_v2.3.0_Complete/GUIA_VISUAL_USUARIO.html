@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Visual Completa - GESTION-KONTROL+</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #fffcfc;
+            background: linear-gradient(135deg, #3b4fab 0%, #a40000 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgb(12, 10, 10);
+            box-shadow: 0 20px 60px rgb(255, 23, 23);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(175deg, #ff0000 0%, #322e2e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 30s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+        
+        .logo {
+            width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgb(255, 251, 251);
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 100;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            background: #258305;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        
+        .section {
+            padding: 60px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative; 
+        }
+        
+        .section-title::after {
+            content: '';
+            width: 250px;
+            height: 4px;
+            background: linear-gradient(175deg, #0033cc, #fd0202);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(175deg, #ff2201 0%, #ff0000 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgb(246, 213, 0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(0, 51, 204, 0.492);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgb(243, 246, 255);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #f8e300;
+        }
+        
+        .feature-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-container {
+            background: #000000;
+            border: 3px solid #0033cc;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 51, 204, 0.3);
+        }
+        
+        .screenshot-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .screenshot-title {
+            color: #f8e300;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .screenshot-description {
+            color: #ffffff;
+            font-size: 1.1em;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+        
+        .step-box {
+            background: linear-gradient(175deg, #100909 0%, #ff0000 100%);
+            border: 2px solid #0033cc;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 51, 204, 0.2);
+        }
+        
+        .step-box h3 {
+            color: #f8e300;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        
+        .step-box ol, .step-box ul {
+            color: #ffffff;
+            padding-left: 20px;
+        }
+        
+        .step-box li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .highlight-box {
+            background: #258305;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(37, 131, 5, 0.3);
+        }
+        
+        .warning-box {
+            background: #e89c2c;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #ff6b00;
+        }
+        
+        .warning-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: #000000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .requirements-table th {
+            background: linear-gradient(195deg, #221822 0%, #ff0000 100%);
+            color: #ffffff;
+            padding: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .requirements-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .requirements-table tr:nth-child(even) {
+            background: #1a1a1a;
+        }
+        
+        .cta-button {
+            background: #258305;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 131, 5, 0.3);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .cta-button:hover {
+            background: #1a6603;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 131, 5, 0.4);
+        }
+        
+        .footer {
+            background: #000000;
+            padding: 40px;
+            text-align: center;
+            border-top: 3px solid #0033cc;
+        }
+        
+        .footer h3 {
+            color: #0033cc;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            border: 1px solid #0033cc;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .section {
+                padding: 30px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .screenshot-container {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .screenshot {
+                width: 100%;
+                height: auto;
+            }
+            
+            .logo {
+                width: 180px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .step-number {
+                font-size: 1.5em;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+            }
+            
+            .step-title {
+                font-size: 1.2em;
+            }
+            
+            .step-description {
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+                line-height: 1.2;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+                line-height: 1.3;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+            
+            .section {
+                padding: 20px 10px;
+            }
+            
+            .screenshot-container {
+                padding: 10px;
+                margin: 10px 0;
+            }
+            
+            .feature-card {
+                padding: 15px;
+            }
+            
+            .step-grid {
+                gap: 15px;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .hero-badge {
+                padding: 6px 15px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .step-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section {
+                padding: 50px 30px;
+            }
+            
+            .screenshot-container {
+                padding: 20px;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .step-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <img src="LOGO APP.png" alt="GESTION-KONTROL+" class="logo">
+            <h1>GESTION-KONTROL+</h1>
+            <p class="subtitle">GUÍA VISUAL COMPLETA DEL USUARIO</p>
+            <div class="hero-badge">VERSIÓN 2.2 - ACTUALIZADA</div>
+        </header>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="section">
+            <h2 class="section-title">🚀 BIENVENIDO A GESTION-KONTROL+</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px; color: #ffffff;">
+                La solución <strong>GRATUITA</strong> más completa para la gestión de tu negocio.
+                <br>
+                <strong>Simple, potente y diseñada para emprendedores argentinos.</strong> 
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3 class="feature-title">SISTEMA DE VENTAS</h3>
+                    <p><strong>Carrito inteligente, múltiples formas de pago y cálculo automático de IVA.</strong></p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">GESTIÓN DE INVENTARIO</h3>
+                    <p><strong>Control total de stock, precios automáticos y carga masiva por CSV.</strong></p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">REPORTES INTELIGENTES</h3>
+                    <p><strong>Análisis detallados, cierre de caja y exportación a Excel.</strong></p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">INTELIGENCIA ARTIFICIAL</h3>
+                    <p><strong>Sugerencias automáticas y alertas de stock bajo.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA PRINCIPAL -->
+        <section class="section">
+            <h2 class="section-title">🏠 PANTALLA PRINCIPAL</h2>
+            
+            <div class="screenshot-container">
+                <h3 class="screenshot-title">📱 INTERFAZ PRINCIPAL</h3>
+                <img src="screenshot/Pantalla principal.png" alt="Pantalla Principal de GESTION-KONTROL+">
+                <div class="screenshot-description">
+                    <strong>Tu panel de control principal:</strong> Cuatro botones grandes y claros para acceder a todas las funciones.
+                    Diseño moderno con efectos visuales y navegación intuitiva.
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>✨ FUNCIONES PRINCIPALES</h3>
+                <p><strong>💰 VENTA:</strong> Procesar nuevas ventas con carrito inteligente</p>
+                <p><strong>📊 VENTAS DEL DÍA:</strong> Ver resumen completo de ventas diarias</p>
+                <p><strong>🏦 CIERRE DE CAJA:</strong> Cerrar caja y generar reportes</p>
+                <p><strong>⚙️ MENÚ GESTIÓN:</strong> Acceder a configuraciones avanzadas</p>
+            </div>
+        </section>
+
+        <!-- SISTEMA DE VENTAS -->
+        <section class="section">
+            <h2 class="section-title">💰 SISTEMA DE VENTAS</h2>
+            
+            <div class="screenshot-container">
+                <h3 class="screenshot-title">🛒 PANTALLA DE VENTAS</h3>
+                <img src="screenshot/PANTALLA nueva venta).png" alt="Sistema de Ventas con Carrito">
+                <div class="screenshot-description">
+                    <strong>Carrito de compras profesional:</strong> Selección de productos con búsqueda inteligente, 
+                    validación automática de stock, cálculo de IVA y múltiples formas de pago.
+                </div>
+            </div>
+
+            <div class="step-box">
+                <h3>🎯 CÓMO PROCESAR UNA VENTA</h3>
+                <ol>
+                    <li><strong>Seleccionar Producto:</strong> Usa el campo de búsqueda con autocompletado</li>
+                    <li><strong>Ingresar Cantidad:</strong> El sistema valida automáticamente el stock disponible</li>
+                    <li><strong>Verificar Precio:</strong> Se completa automáticamente (incluye ofertas activas)</li>
+                    <li><strong>Agregar al Carrito:</strong> Un clic y se suma al carrito con cálculo de IVA</li>
+                    <li><strong>Elegir Forma de Pago:</strong> Efectivo, débito, crédito, transferencia, QR</li>
+                    <li><strong>Finalizar Venta:</strong> Se actualiza automáticamente el stock</li>
+                </ol>
+            </div>
+
+            <div class="highlight-box">
+                <h3>⚡ CARACTERÍSTICAS AVANZADAS</h3>
+                <p><strong>✓ Ofertas Automáticas:</strong> 3x2, 2x1, descuentos por porcentaje</p>
+                <p><strong>✓ Validación Visual:</strong> Campos verdes = OK, rojos = error</p>
+                <p><strong>✓ Cálculo Inteligente:</strong> IVA automático, totales en tiempo real</p>
+                <p><strong>✓ Stock en Tiempo Real:</strong> Actualización inmediata del inventario</p>
+            </div>
+        </section>
+
+        <!-- MENÚ DE GESTIÓN -->
+        <section class="section">
+            <h2 class="section-title">⚙️ MENÚ DE GESTIÓN</h2>
+            
+            <div class="screenshot-container">
+                <h3 class="screenshot-title">🔧 CONFIGURACIÓN AVANZADA</h3>
+                <img src="screenshot/PANTALLA MENU.png" alt="Menú de Gestión y Configuración">
+                <div class="screenshot-description">
+                    <strong>Centro de control completo:</strong> Todas las herramientas para administrar productos,
+                    precios, inventario y configuraciones del sistema en una sola pantalla.
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">GESTIÓN DE PRODUCTOS</h3>
+                    <p>Alta individual, ver inventario, modificar productos y actualizar precios con un solo clic.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title">CARGA MASIVA</h3>
+                    <p>Importa cientos de productos desde Excel/CSV en segundos. Incluye validación automática.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3 class="feature-title">SISTEMA DE OFERTAS</h3>
+                    <p>Crea ofertas por cantidad (3x2), porcentaje (20% OFF) o precios especiales.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">CENTRO DE IA</h3>
+                    <p>Análisis inteligente de ventas y sugerencias automáticas de reposición.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPORTES Y VENTAS DEL DÍA -->
+        <section class="section">
+            <h2 class="section-title">📊 REPORTES Y ANÁLISIS</h2>
+            
+            <div class="screenshot-container">
+                <h3 class="screenshot-title">📈 VENTAS DEL DÍA</h3>
+                <img src="screenshot/pantalla ventas del dia.png" alt="Reporte de Ventas Diarias">
+                <div class="screenshot-description">
+                    <strong>Análisis completo en tiempo real:</strong> Ve todas las ventas del día, totales por forma de pago,
+                    productos más vendidos y estadísticas detalladas para tomar mejores decisiones.
+                </div>
+            </div>
+
+            <div class="step-box">
+                <h3>📋 INFORMACIÓN DISPONIBLE</h3>
+                <ul>
+                    <li><strong>Ventas Individuales:</strong> Detalle completo de cada transacción</li>
+                    <li><strong>Totales por Forma de Pago:</strong> Efectivo, tarjetas, transferencias</li>
+                    <li><strong>Productos Vendidos:</strong> Ranking de productos más populares</li>
+                    <li><strong>Ganancias del Día:</strong> Cálculo automático de rentabilidad</li>
+                    <li><strong>Exportación a CSV:</strong> Para análisis externos en Excel</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CENTRO DE INTELIGENCIA ARTIFICIAL -->
+        <section class="section">
+            <h2 class="section-title">🤖 CENTRO DE IA</h2>
+            
+            <div class="screenshot-container">
+                <h3 class="screenshot-title">🧠 INTELIGENCIA ARTIFICIAL</h3>
+                <img src="screenshot/pantalla IA.png" alt="Centro de Inteligencia Artificial">
+                <div class="screenshot-description">
+                    <strong>Tu asistente inteligente de negocios:</strong> Análisis automático de patrones de venta,
+                    sugerencias de reposición y alertas inteligentes para optimizar tu negocio.
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚨</div>
+                    <h3 class="feature-title">ALERTAS DE STOCK</h3>
+                    <p>Notificaciones automáticas cuando productos están por agotarse.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">ANÁLISIS DE TENDENCIAS</h3>
+                    <p>Identifica qué productos se venden más y en qué épocas del año.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">SUGERENCIAS INTELIGENTES</h3>
+                    <p>Recomendaciones de precios y productos para maximizar ganancias.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">PREDICCIONES</h3>
+                    <p>Estimaciones de ventas futuras basadas en históricos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTALACIÓN Y CONFIGURACIÓN -->
+        <section class="section">
+            <h2 class="section-title">💾 INSTALACIÓN RÁPIDA</h2>
+            
+            <div class="step-box">
+                <h3>⚡ INSTALACIÓN EN 3 PASOS</h3>
+                <ol>
+                    <li><strong>DESCARGAR:</strong> Obtén el archivo completo desde GitHub</li>
+                    <li><strong>EJECUTAR:</strong> Doble clic en "GESTION-KONTROL+.exe"</li>
+                    <li><strong>USAR:</strong> ¡Ya está listo para trabajar!</li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ IMPORTANTE</h3>
+                <p><strong>Si Windows muestra advertencia de seguridad:</strong></p>
+                <ul>
+                    <li>Clic en "Más información"</li>
+                    <li>Seleccionar "Ejecutar de todas formas"</li>
+                    <li>O ejecutar como administrador (clic derecho)</li>
+                </ul>
+            </div>
+
+            <table class="requirements-table">
+                <thead>
+                    <tr>
+                        <th>REQUISITO</th>
+                        <th>MÍNIMO</th>
+                        <th>RECOMENDADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sistema Operativo</strong></td>
+                        <td>Windows 10</td>
+                        <td>Windows 11</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memoria RAM</strong></td>
+                        <td>4 GB</td>
+                        <td>8 GB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Espacio en Disco</strong></td>
+                        <td>500 MB</td>
+                        <td>1 GB</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Resolución</strong></td>
+                        <td>1280x720</td>
+                        <td>1920x1080</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CARGA MASIVA DE PRODUCTOS -->
+        <section class="section">
+            <h2 class="section-title">📁 CARGA MASIVA DE PRODUCTOS</h2>
+            
+            <div class="step-box">
+                <h3>🚀 CARGA TU INVENTARIO COMPLETO EN MINUTOS</h3>
+                <ol>
+                    <li><strong>Descargar Modelo:</strong> Obtén el archivo CSV de ejemplo</li>
+                    <li><strong>Completar Datos:</strong> Llena tu inventario en Excel/CSV</li>
+                    <li><strong>Subir Archivo:</strong> Importa todo con un solo clic</li>
+                    <li><strong>Verificar:</strong> El sistema valida automáticamente los datos</li>
+                </ol>
+            </div>
+
+            <div class="code-block">
+Formato CSV requerido:
+marca,descripcion,color,talle,cantidad,precio_costo,porcentaje_venta,porcentaje_amigo
+Nike,Remera Deportiva,Rojo,M,10,1500,60,25
+Adidas,Pantalón Jogger,Negro,L,5,3000,50,20
+Local,Gorra Trucker,Azul,U,15,800,80,30
+            </div>
+
+            <div class="highlight-box">
+                <h3>✅ VENTAJAS DE LA CARGA MASIVA</h3>
+                <p><strong>⚡ Velocidad:</strong> Carga cientos de productos en segundos</p>
+                <p><strong>✓ Validación:</strong> Detecta errores automáticamente</p>
+                <p><strong>🔄 Backup:</strong> Crea respaldo antes de importar</p>
+                <p><strong>📊 Precios:</strong> Calcula automáticamente precios de venta</p>
+            </div>
+        </section>
+
+        <!-- RESOLUCIÓN DE PROBLEMAS -->
+        <section class="section">
+            <h2 class="section-title">🛠️ RESOLUCIÓN DE PROBLEMAS</h2>
+            
+            <div class="warning-box">
+                <h3>❌ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+                
+                <p><strong>🚫 El programa no inicia:</strong></p>
+                <ul>
+                    <li>Ejecutar como administrador</li>
+                    <li>Verificar que todos los archivos estén en la misma carpeta</li>
+                    <li>Verificar permisos de la carpeta</li>
+                </ul>
+                
+                <p><strong>🖼️ No se ven los logos:</strong></p>
+                <ul>
+                    <li>Verificar que los archivos .PNG estén presentes</li>
+                    <li>Mantener archivos de imagen en la carpeta principal</li>
+                </ul>
+                
+                <p><strong>💾 Los datos no se guardan:</strong></p>
+                <ul>
+                    <li>Ejecutar como administrador</li>
+                    <li>Verificar permisos de escritura en la carpeta</li>
+                    <li>Verificar espacio disponible en disco</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <h3>📁 ARCHIVOS IMPORTANTES PARA RESPALDO</h3>
+                <div class="code-block">
+📄 productos.json         (Base de datos de productos)
+📄 ventas.json           (Ventas del día actual)  
+📄 ventas_historico_*.json (Historial de ventas por año)
+🖼️ LOGO APP.png          (Logo principal)
+🖼️ *.png                 (Imágenes del sistema)
+                </div>
+                <p style="color: #f8e300; font-weight: 600;">
+                    💡 <strong>Consejo:</strong> Haz backup de estos archivos semanalmente
+                </p>
+            </div>
+        </section>
+
+        <!-- CONSEJOS Y MEJORES PRÁCTICAS -->
+        <section class="section">
+            <h2 class="section-title">💡 CONSEJOS PROFESIONALES</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title">RUTINA DIARIA</h3>
+                    <p>Realiza el cierre de caja todos los días para mantener un control perfecto de tu negocio.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">CONTROL DE PRECIOS</h3>
+                    <p>Revisa y actualiza precios mensualmente. Usa las sugerencias de IA para optimizar márgenes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">GESTIÓN DE STOCK</h3>
+                    <p>Atiende las alertas de stock bajo inmediatamente. Usa reportes para planificar compras.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">ANÁLISIS SEMANAL</h3>
+                    <p>Consulta los reportes semanalmente para identificar tendencias y oportunidades.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🏆 MAXIMIZA TUS RESULTADOS</h3>
+                <p><strong>🔄 Usa Ofertas Estratégicas:</strong> Crea ofertas 3x2 para productos de lenta rotación</p>
+                <p><strong>📊 Analiza Patrones:</strong> Identifica qué productos se venden más y cuándo</p>
+                <p><strong>💻 Exporta a Excel:</strong> Usa los CSV para análisis externos más profundos</p>
+                <p><strong>🤖 Confía en la IA:</strong> Las sugerencias están basadas en tu historial real</p>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="section" style="background: linear-gradient(135deg, #ff0000 0%, #000000 100%); text-align: center;">
+            <h2 class="section-title">🚀 ¡COMENZÁ AHORA MISMO!</h2>
+            <p style="font-size: 1.3em; margin-bottom: 30px; color: #ffffff;">
+                Descargá GESTION-KONTROL+ y transformá tu negocio hoy mismo.
+            </p>
+            
+            <a href="https://github.com/vjlale/GESTION-KONTROL-/releases" class="cta-button">
+                📥 DESCARGAR GRATIS AHORA
+            </a>
+            
+            <p style="margin-top: 30px; color: #ffffff; opacity: 0.9;">
+                ✅ 100% Gratuito | ✅ Sin registro | ✅ Listo para usar
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h3>📞 SOPORTE Y CONTACTO</h3>
+            <p><strong>GESTION-KONTROL+ v2.2 - La Revolución Gratuita</strong></p>
+            <p>Sistema desarrollado especialmente para emprendedores argentinos</p>
+            
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 30px 0; color: #ffffff;">
+                <div>
+                    <strong>📧 Email:</strong><br>
+                    alenia.online@gmail.com
+                </div>
+                <div>
+                    <strong>📱 WhatsApp:</strong><br>
+                    +54 351 6875178
+                </div>
+                <div>
+                    <strong>🌐 GitHub:</strong><br>
+                    github.com/vjlale/GESTION-KONTROL-
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; color: #666; font-style: italic;">
+                <p>© 2025 GESTION-KONTROL+ | Hecho con ❤️ para el crecimiento de tu negocio</p>
+                <p><strong>"El único software de gestión que necesitás, gratis para siempre"</strong></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

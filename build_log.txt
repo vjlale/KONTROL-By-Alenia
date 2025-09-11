@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\Desktop\ML\ALENIA\APP\ALENIA-GESTION-KONTROL +V2.2\build_distribution.py", line 608, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Alejandro\Desktop\ML\ALENIA\APP\ALENIA-GESTION-KONTROL +V2.2\build_distribution.py", line 602, in main
+    success = builder.run_build()
+  File "C:\Users\Alejandro\Desktop\ML\ALENIA\APP\ALENIA-GESTION-KONTROL +V2.2\build_distribution.py", line 550, in run_build
+    print(f"\U0001f680 Iniciando construcci¾n de {APP_NAME} v{VERSION} - build_distribution.py:550")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f680' in position 0: character maps to <undefined>

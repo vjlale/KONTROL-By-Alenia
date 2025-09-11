@@ -1,0 +1,68 @@
+
+═══════════════════════════════════════════════════════════════
+    [SOFTWARE] ALENIA GESTION-KONTROL+ v2.3.0
+    SOFTWARE PROFESIONAL DE GESTIÓN COMERCIAL
+═══════════════════════════════════════════════════════════════
+
+[INSTALACION] INSTALACIÓN RÁPIDA (2 MINUTOS):
+
+1. EJECUTAR
+   → Doble clic en "KONTROL-PLUS.exe"
+   
+2. PRIMERA VEZ
+   → Crear usuario administrador
+   → Configurar datos básicos
+   
+3. ¡LISTO!
+   → Ya podés empezar a gestionar tu negocio
+
+─────────────────────────────────────────────────────────────────
+
+[NOTAS] NOTAS IMPORTANTES:
+
+[ANTIVIRUS] ANTIVIRUS
+   Si Windows Defender o tu antivirus muestra alerta:
+   → Es un falso positivo (común con apps empaquetadas)
+   → Clic en "Más información" → "Ejecutar de todas formas"
+   → Agregar a excepciones para evitar futuras alertas
+
+[REQUISITOS] REQUISITOS DEL SISTEMA
+   → Windows 10 o 11 (64-bit)
+   → 4GB RAM mínimo (8GB recomendado)
+   → 100MB espacio en disco
+   → Resolución mínima: 1280x720
+
+[SOPORTE] SOPORTE TÉCNICO
+   → WhatsApp: +54 351 6875178
+   → Email: alenia.online@gmail.com
+   → Respuesta garantizada en 24hs
+
+─────────────────────────────────────────────────────────────────
+
+[CARACTERISTICAS] CARACTERÍSTICAS PRINCIPALES:
+
+[OK] Gestión completa de inventario con alertas automáticas
+[OK] Sistema de ventas profesional con múltiples formas de pago
+[OK] Ofertas inteligentes (3x2, 2x1, descuentos automáticos)
+[OK] Reportes avanzados con exportación a Excel/CSV
+[OK] Inteligencia Artificial para optimizar tu negocio
+[OK] Carga masiva de productos desde archivos CSV
+[OK] Control de usuarios y permisos de acceso
+[OK] Cierre de caja automático con balances detallados
+
+[GRATIS] 100% GRATUITO - Sin licencias ni mensualidades
+
+─────────────────────────────────────────────────────────────────
+
+[DOCUMENTACION] DOCUMENTACIÓN INCLUIDA:
+
+[DOC] README.md - Información completa del software
+[DOC] GUIA_USUARIO_COMPLETA.html - Manual paso a paso
+[DOC] GUIA_VISUAL_USUARIO.html - Tutorial con capturas
+[DOC] modelo_productos.csv - Ejemplo para carga masiva
+
+─────────────────────────────────────────────────────────────────
+
+[GRACIAS] ¡Gracias por elegir ALENIA GESTION-KONTROL+!
+
+© 2025 ALENIA - Desarrollado con ❤️ para emprendedores argentinos

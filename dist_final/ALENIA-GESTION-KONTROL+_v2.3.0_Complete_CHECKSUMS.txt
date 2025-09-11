@@ -1,0 +1,14 @@
+ALENIA GESTION-KONTROL+ v2.3.0 - CHECKSUMS
+
+Archivo: ALENIA-GESTION-KONTROL+_v2.3.0_Complete.zip
+Tamaño: 34,097,756 bytes (32.5 MB)
+Fecha: 2025-09-10 23:44:29
+
+MD5:    7f4ef1cea49bfce135239444af4f8cbb
+SHA256: b16a5202adb91131e8c9cefb5a2c4ea61d2ba92fceccafe8c795dce27bb11530
+
+Verificación:
+- Use estos hashes para verificar la integridad del archivo
+- Cualquier diferencia indica que el archivo fue modificado
+- Para verificar en Windows PowerShell:
+  Get-FileHash "ALENIA-GESTION-KONTROL+_v2.3.0_Complete.zip" -Algorithm SHA256
