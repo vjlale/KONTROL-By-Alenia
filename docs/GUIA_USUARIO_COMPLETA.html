@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Usuario - ALEN.IA KONTROL+ v2.3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: #e5e7eb;
+            background-color: #0f172a;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #1e293b;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #374151;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            border-bottom: 2px solid #4f46e5;
+            padding-bottom: 0.3em;
+        }
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; border-bottom: 1px solid #6b7280; }
+        p { margin-bottom: 1.2em; }
+        a {
+            color: #4f46e5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #818cf8;
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 1.2em;
+        }
+        li { margin-bottom: 0.5em; }
+        strong { font-weight: 700; color: #a5b4fc; }
+        code {
+            background-color: #0f172a;
+            padding: 0.2em 0.5em;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            border: 1px solid #374151;
+        }
+        pre {
+            background-color: #0f172a;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #374151;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+        pre code {
+            padding: 0;
+            background: none;
+            border: none;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #374151;
+            margin: 40px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #374151;
+        }
+        th {
+            background-color: #4f46e5;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        tr:nth-child(even) {
+            background-color: #2a3447;
+        }
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .alert-success {
+            background: #1e293b;
+            border-left: 4px solid #10b981;
+        }
+        .alert-warning {
+            background: #dc2626;
+            border-left: 4px solid #f59e0b;
+        }
+        .alert-info {
+            background: #1e293b;
+            border-left: 4px solid #4f46e5;
+        }
+        .two-column {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .two-column > div {
+            flex: 1;
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #374151;
+        }
+        .step-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #4f46e5;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 GUÍA COMPLETA DE USUARIO - ALEN.IA KONTROL+ v2.3</h1>
+        <h2>Sistema de Gestión Inteligente de Stock y Ventas</h2>
+        
+        <div class="step-box">
+            <h3 style="color: #fbbf24; margin-top: 0;">📋 Índice de Contenidos</h3>
+            <ul style="columns: 2; column-gap: 30px;">
+                <li><a href="#bienvenida" style="color: #a5b4fc;">1. Bienvenida</a></li>
+                <li><a href="#requisitos" style="color: #a5b4fc;">2. Requisitos del Sistema</a></li>
+                <li><a href="#descarga-instalacion" style="color: #a5b4fc;">3. Descarga e Instalación</a></li>
+                <li><a href="#primer-inicio" style="color: #a5b4fc;">4. Primer Inicio y Usuario</a></li>
+                <li><a href="#configuracion-inicial" style="color: #a5b4fc;">5. Configuración Inicial</a></li>
+                <li><a href="#sistema-ventas" style="color: #a5b4fc;">6. Sistema de Ventas</a></li>
+                <li><a href="#gestion-inventario" style="color: #a5b4fc;">7. Gestión de Inventario</a></li>
+                <li><a href="#reportes-analisis" style="color: #a5b4fc;">8. Reportes y Análisis</a></li>
+                <li><a href="#centro-ia" style="color: #a5b4fc;">9. Centro de IA</a></li>
+                <li><a href="#configuracion-avanzada" style="color: #a5b4fc;">10. Configuración Avanzada</a></li>
+                <li><a href="#resolucion-problemas" style="color: #a5b4fc;">11. Resolución de Problemas</a></li>
+                <li><a href="#soporte" style="color: #a5b4fc;">12. Soporte Técnico</a></li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2 id="bienvenida">1. 🎯 BIENVENIDA A ALEN.IA KONTROL+</h2>
+        
+        <div class="alert alert-success">
+            <h4 style="color: #10b981; margin-top: 0;">🎉 ¡Gracias por elegir ALEN.IA KONTROL+!</h4>
+            <p style="margin-bottom: 0; color: #ffffff;">Has descargado la solución más completa y moderna para la gestión integral de inventario y ventas, diseñada específicamente para pequeños y medianos comercios argentinos.</p>
+        </div>
+
+        <h3>¿Qué es ALEN.IA KONTROL+?</h3>
+        <p><strong>ALEN.IA KONTROL+ v2.3</strong> es un sistema integral de gestión comercial que combina potencia, simplicidad y tecnología de inteligencia artificial para revolucionar la forma de gestionar tu negocio.</p>
+        
+        <div class="alert alert-info">
+            <h4 style="color: #4f46e5; margin-top: 0;">💡 ¿Por qué elegiste ALEN.IA KONTROL+?</h4>
+            <ul>
+                <li><strong>100% GRATUITO</strong> - Sin licencias, sin mensualidades, sin límites</li>
+                <li><strong>INSTALACIÓN INSTANTÁNEA</strong> - Solo descargar, descomprimir y ejecutar</li>
+                <li><strong>SIN INTERNET REQUERIDO</strong> - Funciona completamente offline</li>
+                <li><strong>DATOS SEGUROS</strong> - Tu información siempre bajo tu control</li>
+                <li><strong>SOPORTE EN ESPAÑOL</strong> - Atención personalizada incluida</li>
+                <li><strong>SISTEMA DE USUARIOS</strong> - Control de acceso y roles</li>
+            </ul>
+        </div>
+
+        <h3>🌟 Características Principales</h3>
+        
+        <table>
+            <tr>
+                <th>Módulo</th>
+                <th>Funcionalidades</th>
+                <th>Beneficios</th>
+            </tr>
+            <tr>
+                <td><strong>🛒 Sistema de Ventas</strong></td>
+                <td>
+                    • Carrito intuitivo<br>
+                    • Múltiples formas de pago<br>
+                    • Ofertas automáticas<br>
+                    • Validación en tiempo real<br>
+                    • Control de stock automático
+                </td>
+                <td>
+                    • Ventas más rápidas<br>
+                    • Menos errores<br>
+                    • Mayor satisfacción del cliente<br>
+                    • Control total del proceso
+                </td>
+            </tr>
+            <tr>
+                <td><strong>📦 Gestión de Inventario</strong></td>
+                <td>
+                    • Control de stock automático<br>
+                    • Carga masiva por CSV<br>
+                    • Categorización avanzada<br>
+                    • Alertas de stock bajo<br>
+                    • Gestión de precios inteligente
+                </td>
+                <td>
+                    • Nunca te quedes sin stock<br>
+                    • Organización profesional<br>
+                    • Ahorro de tiempo<br>
+                    • Decisiones informadas
+                </td>
+            </tr>
+            <tr>
+                <td><strong>📊 Reportes y Análisis</strong></td>
+                <td>
+                    • Dashboard en tiempo real<br>
+                    • Reportes personalizados<br>
+                    • Exportación a Excel/CSV<br>
+                    • Análisis de rentabilidad<br>
+                    • Cierre de caja automático
+                </td>
+                <td>
+                    • Visión clara del negocio<br>
+                    • Identificar oportunidades<br>
+                    • Optimizar ganancias<br>
+                    • Tomar mejores decisiones
+                </td>
+            </tr>
+            <tr>
+                <td><strong>🤖 Centro de IA</strong></td>
+                <td>
+                    • Sugerencias de reposición<br>
+                    • Análisis predictivo<br>
+                    • Optimización de precios<br>
+                    • Alertas inteligentes<br>
+                    • Recomendaciones automáticas
+                </td>
+                <td>
+                    • Automatización inteligente<br>
+                    • Predicción de demanda<br>
+                    • Maximizar ganancias<br>
+                    • Ventaja competitiva
+                </td>
+            </tr>
+            <tr>
+                <td><strong>👥 Sistema de Usuarios</strong></td>
+                <td>
+                    • Múltiples usuarios<br>
+                    • Roles (Admin/Vendedor)<br>
+                    • Autenticación segura<br>
+                    • Control de acceso<br>
+                    • Historial de sesiones
+                </td>
+                <td>
+                    • Seguridad de datos<br>
+                    • Control de permisos<br>
+                    • Trazabilidad de acciones<br>
+                    • Gestión de equipo
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2 id="requisitos">2. 🔧 REQUISITOS DEL SISTEMA</h2>
+        
+        <div class="two-column">
+            <div>
+                <h4 style="color: #fbbf24; margin-top: 0;">📋 Mínimos</h4>
+                <ul>
+                    <li><strong>OS:</strong> Windows 10 (64-bit)</li>
+                    <li><strong>RAM:</strong> 4GB</li>
+                    <li><strong>Disco:</strong> 100MB libres</li>
+                    <li><strong>Pantalla:</strong> 1280x720px</li>
+                    <li><strong>Procesador:</strong> Intel i3 o AMD equivalente</li>
+                </ul>
+            </div>
+            <div style="border: 1px solid #10b981;">
+                <h4 style="color: #10b981; margin-top: 0;">🚀 Recomendados</h4>
+                <ul>
+                    <li><strong>OS:</strong> Windows 11 (64-bit)</li>
+                    <li><strong>RAM:</strong> 8GB o superior</li>
+                    <li><strong>Disco:</strong> 500MB libres (SSD)</li>
+                    <li><strong>Pantalla:</strong> 1920x1080px</li>
+                    <li><strong>Procesador:</strong> Intel i5 o AMD Ryzen 5</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="alert alert-warning">
+            <h4 style="color: #ffffff; margin-top: 0;">⚠️ Importante</h4>
+            <p style="margin-bottom: 0; color: #ffffff;">Esta versión NO es compatible con sistemas de 32-bit. Asegúrate de tener Windows 10/11 de 64-bit para el correcto funcionamiento.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="descarga-instalacion">3. 📥 DESCARGA E INSTALACIÓN PASO A PASO</h2>
+
+        <h3>📦 Paso 1: Verificar la Descarga</h3>
+        <p>Si estás leyendo esta guía, ya has descargado el archivo ZIP. Verifica que tengas:</p>
+        <ul>
+            <li><strong>Archivo:</strong> <code>ALENIA-GESTION-KONTROL+_v2.3.0_Complete.zip</code></li>
+            <li><strong>Tamaño:</strong> Aproximadamente 30-35 MB</li>
+            <li><strong>Ubicación:</strong> Generalmente en tu carpeta <code>Descargas</code></li>
+        </ul>
+
+        <h3>📂 Paso 2: Crear Carpeta de Instalación</h3>
+        <div class="step-box">
+            <h4>Ubicaciones Recomendadas:</h4>
+            <p><strong>Opción 1 (Recomendada):</strong></p>
+            <code>C:\Programas\AlenIA-Kontrol\</code>
+            
+            <p><strong>Opción 2 (Alternativa):</strong></p>
+            <code>C:\Users\[TuUsuario]\Documents\AlenIA-Kontrol\</code>
+            
+            <p><strong>Opción 3 (Para múltiples usuarios):</strong></p>
+            <code>D:\Aplicaciones\AlenIA-Kontrol\</code>
+        </div>
+
+        <h3>🗂️ Paso 3: Descomprimir el Archivo ZIP</h3>
+        
+        <h4>Método 1: Usando Windows (Integrado)</h4>
+        <ol>
+            <li><strong>Localiza el archivo ZIP descargado</strong>
+                <ul>
+                    <li>Ve a tu carpeta <code>Descargas</code></li>
+                    <li>Busca <code>ALENIA-GESTION-KONTROL+_v2.3.0_Complete.zip</code></li>
+                </ul>
+            </li>
+            <li><strong>Extrae los archivos</strong>
+                <ul>
+                    <li>Haz <strong>clic derecho</strong> en el archivo ZIP</li>
+                    <li>Selecciona <strong>"Extraer todo..."</strong></li>
+                    <li>En la ventana que aparece, cambia la ruta de destino a tu carpeta de instalación elegida</li>
+                    <li>Haz clic en <strong>"Extraer"</strong></li>
+                </ul>
+            </li>
+        </ol>
+
+        <h4>Método 2: Usando WinRAR/7-Zip</h4>
+        <ol>
+            <li>Haz <strong>clic derecho</strong> en el archivo ZIP</li>
+            <li>Selecciona <strong>"Extraer en..."</strong> o <strong>"Extract to..."</strong></li>
+            <li>Elige tu carpeta de instalación</li>
+            <li>Confirma la extracción</li>
+        </ol>
+
+        <h3>✅ Paso 4: Verificación de la Instalación</h3>
+        
+        <p>Después de la extracción, tu carpeta debe contener estos archivos:</p>
+        
+        <pre><code>📁 AlenIA-Kontrol/
+├── 🖥️ KONTROL+.exe                    # Aplicación principal (30MB)
+├── 🖼️ LOGO APP.png                     # Logo principal
+├── 🖼️ 7.png                            # Logo secundario  
+├── 🖼️ LOGONOMBRE.png                   # Logo con nombre
+├── 📄 modelo_productos.csv             # Plantilla para productos
+├── 📚 GUIA_USUARIO_COMPLETA.html       # Esta guía
+├── 📋 README.md                        # Información general
+├── 📊 docs/                            # Documentación adicional
+└── 📁 screenshot/                      # Capturas de pantalla
+    ├── LOGO_APP.png
+    ├── ALENRESULTADOS.png
+    └── [otras imágenes]</code></pre>
+
+        <div class="alert alert-warning">
+            <h4 style="color: #ffffff; margin-top: 0;">⚠️ Importante</h4>
+            <p style="margin-bottom: 0; color: #ffffff;"><strong>NO muevas ni elimines ningún archivo.</strong> Todos son necesarios para el correcto funcionamiento de la aplicación.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="primer-inicio">4. 🚀 PRIMER INICIO Y CREACIÓN DE USUARIO</h2>
+
+        <h3>🎯 Ejecutar la Aplicación por Primera Vez</h3>
+        
+        <div class="step-box">
+            <h4>Paso 1: Ejecutar el Programa</h4>
+            <ol>
+                <li>Navega a tu carpeta de instalación</li>
+                <li>Busca el archivo <strong><code>KONTROL+.exe</code></strong></li>
+                <li>Haz <strong>doble clic</strong> para ejecutar</li>
+            </ol>
+        </div>
+
+        <h3>🛡️ Posibles Advertencias de Seguridad</h3>
+        
+        <h4>Si aparece "Windows protegió tu PC":</h4>
+        <ol>
+            <li>Haz clic en <strong>"Más información"</strong></li>
+            <li>Haz clic en <strong>"Ejecutar de todas formas"</strong></li>
+            <li>La aplicación se abrirá normalmente</li>
+        </ol>
+
+        <h4>Si aparece advertencia del antivirus:</h4>
+        <ol>
+            <li>Selecciona <strong>"Permitir"</strong> o <strong>"Agregar excepción"</strong></li>
+            <li>Marca la carpeta completa como confiable</li>
+            <li>Reinicia la aplicación si es necesario</li>
+        </ol>
+
+        <h3>👤 Creación del Primer Usuario (Administrador)</h3>
+        
+        <div class="step-box">
+            <h4 style="color: #10b981; margin-top: 0;">🎉 Pantalla de Registro Inicial</h4>
+            <p>Al ejecutar por primera vez, aparecerá la pantalla de <strong>"Registro Inicial"</strong> donde debes crear tu usuario administrador:</p>
+            
+            <ol>
+                <li><strong>👤 Usuario:</strong>
+                    <ul>
+                        <li>Ingresa un nombre de usuario único</li>
+                        <li>Recomendado: tu nombre o "admin"</li>
+                        <li>Sin espacios ni caracteres especiales</li>
+                    </ul>
+                </li>
+                <li><strong>🔒 Contraseña:</strong>
+                    <ul>
+                        <li>Mínimo 4 caracteres</li>
+                        <li>Recomendado: 8+ caracteres con números</li>
+                        <li>Guárdala en un lugar seguro</li>
+                    </ul>
+                </li>
+                <li><strong>🔐 Confirmar Contraseña:</strong>
+                    <ul>
+                        <li>Repite exactamente la misma contraseña</li>
+                        <li>Debe coincidir perfectamente</li>
+                    </ul>
+                </li>
+                <li><strong>Crear Usuario:</strong>
+                    <ul>
+                        <li>Haz clic en <strong>"Crear Usuario"</strong></li>
+                        <li>El sistema creará tu usuario administrador</li>
+                        <li>Automáticamente accederás al sistema</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="alert alert-info">
+            <h4 style="color: #4f46e5; margin-top: 0;">💡 Información Importante del Primer Usuario</h4>
+            <ul>
+                <li>El primer usuario creado será <strong>ADMINISTRADOR</strong> automáticamente</li>
+                <li>Tendrá acceso completo a todas las funciones</li>
+                <li>Podrá crear usuarios adicionales con rol de <strong>Vendedor</strong></li>
+                <li>Los datos se guardan en <code>usuarios.json</code> con encriptación segura</li>
+                <li>Si olvidas la contraseña, contacta al soporte técnico</li>
+            </ul>
+        </div>
+
+        <h3>🎊 Verificación del Primer Inicio Exitoso</h3>
+        
+        <p>Después de crear tu usuario, deberías ver:</p>
+        <ul>
+            <li>✅ Pantalla principal con logo de ALEN.IA KONTROL+</li>
+            <li>✅ Tres botones principales: <strong>"💰 Venta"</strong>, <strong>"📊 Ventas del Día"</strong>, <strong>"⚙️ Menú Gestión"</strong></li>
+            <li>✅ Interfaz moderna con colores azul y dorado</li>
+            <li>✅ Tu nombre de usuario visible en la barra superior</li>
+            <li>✅ Sin mensajes de error</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="configuracion-inicial">5. ⚙️ CONFIGURACIÓN INICIAL</h2>
+
+        <h3>📊 Configurar Inventario Inicial</h3>
+        
+        <div class="two-column">
+            <div>
+                <h4>Opción A: Carga Individual</h4>
+                <p><strong>Para pocos productos (1-20)</strong></p>
+                <ol>
+                    <li>Haz clic en <strong>"⚙️ Menú Gestión"</strong></li>
+                    <li>Selecciona <strong>"📦 Agregar Producto"</strong></li>
+                    <li>Completa todos los campos</li>
+                    <li>Haz clic en <strong>"Guardar"</strong></li>
+                    <li>Repite para cada producto</li>
+                </ol>
+            </div>
+            <div>
+                <h4>Opción B: Carga Masiva (RECOMENDADA)</h4>
+                <p><strong>Para muchos productos (20+)</strong></p>
+                <ol>
+                    <li>Ve a <strong>"⚙️ Menú Gestión"</strong></li>
+                    <li>Selecciona <strong>"📂 Carga Masiva"</strong></li>
+                    <li>Descarga el modelo CSV</li>
+                    <li>Completa con tus productos</li>
+                    <li>Sube el archivo completado</li>
+                </ol>
+            </div>
+        </div>
+
+        <h4>📋 Campos Requeridos para Productos:</h4>
+        <table>
+            <tr>
+                <th>Campo</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+            </tr>
+            <tr>
+                <td><strong>Marca</strong></td>
+                <td>Marca o proveedor del producto</td>
+                <td>Nike, Adidas, Local</td>
+            </tr>
+            <tr>
+                <td><strong>Descripción</strong></td>
+                <td>Nombre descriptivo del producto</td>
+                <td>Remera Deportiva, Pantalón Jean</td>
+            </tr>
+            <tr>
+                <td><strong>Color</strong></td>
+                <td>Color específico</td>
+                <td>Rojo, Azul, Negro</td>
+            </tr>
+            <tr>
+                <td><strong>Talle</strong></td>
+                <td>Talla o tamaño</td>
+                <td>S, M, L, XL, 42, Único</td>
+            </tr>
+            <tr>
+                <td><strong>Cantidad</strong></td>
+                <td>Stock inicial disponible</td>
+                <td>10, 25, 50</td>
+            </tr>
+            <tr>
+                <td><strong>Precio Costo</strong></td>
+                <td>Costo de adquisición</td>
+                <td>1000, 1500.50</td>
+            </tr>
+            <tr>
+                <td><strong>% Venta</strong></td>
+                <td>Margen para precio público</td>
+                <td>50 (= 50% de ganancia)</td>
+            </tr>
+            <tr>
+                <td><strong>% Amigo</strong></td>
+                <td>Margen para precio especial</td>
+                <td>20 (= 20% de ganancia)</td>
+            </tr>
+        </table>
+
+        <h4>📄 Formato del CSV para Carga Masiva:</h4>
+        <pre><code>marca,descripcion,color,talle,cantidad,precio_costo,porcentaje_venta,porcentaje_amigo
+Nike,Remera Deportiva,Rojo,M,10,1000,50,20
+Adidas,Pantalón Training,Azul,L,5,2000,60,25
+Local,Gorra Básica,Negro,U,15,500,80,30</code></pre>
+
+        <h3>💳 Configurar Formas de Pago</h3>
+        
+        <p>Las formas de pago están preconfiguradas:</p>
+        <ul>
+            <li>✅ <strong>EFECTIVO</strong></li>
+            <li>✅ <strong>DÉBITO</strong></li>
+            <li>✅ <strong>CRÉDITO</strong></li>
+            <li>✅ <strong>TRANSFERENCIA</strong></li>
+            <li>✅ <strong>QR</strong> (Mercado Pago, etc.)</li>
+            <li>✅ <strong>OTROS</strong></li>
+        </ul>
+
+        <h3>🎁 Configurar Ofertas (Opcional)</h3>
+        
+        <div class="step-box">
+            <h4>Tipos de Ofertas Disponibles:</h4>
+            <ol>
+                <li><strong>Ofertas por Cantidad:</strong> 3x2, 2x1, etc.</li>
+                <li><strong>Ofertas por Porcentaje:</strong> 10%, 20%, 50% descuento</li>
+                <li><strong>Precios Especiales:</strong> Precio fijo promocional</li>
+            </ol>
+            
+            <p><strong>Para crear una oferta:</strong></p>
+            <ol>
+                <li>Ve a <strong>"⚙️ Menú Gestión"</strong> → <strong>"🎁 Gestión de Ofertas"</strong></li>
+                <li>Haz clic en <strong>"Nueva Oferta"</strong></li>
+                <li>Selecciona el tipo de oferta</li>
+                <li>Elige los productos aplicables</li>
+                <li>Configura el valor del descuento</li>
+                <li>Activa la oferta</li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2 id="sistema-ventas">6. 🛒 SISTEMA DE VENTAS</h2>
+
+        <h3>💰 Realizar tu Primera Venta</h3>
+        
+        <div class="step-box">
+            <h4>Proceso Completo de Venta:</h4>
+            
+            <p><strong>Paso 1: Acceder al Sistema de Ventas</strong></p>
+            <ul>
+                <li>Desde la pantalla principal, haz clic en <strong>"💰 Venta"</strong></li>
+                <li>Se abrirá la interfaz de ventas con tu inventario completo</li>
+            </ul>
+
+            <p><strong>Paso 2: Seleccionar Producto</strong></p>
+            <ul>
+                <li>Usa el <strong>dropdown</strong> para buscar el producto</li>
+                <li>Puedes escribir para filtrar productos rápidamente</li>
+                <li>El sistema muestra: Descripción | Color | Talle | Stock disponible</li>
+            </ul>
+
+            <p><strong>Paso 3: Configurar la Venta</strong></p>
+            <ul>
+                <li><strong>Cantidad:</strong> Ingresa la cantidad deseada (validación automática de stock)</li>
+                <li><strong>Precio:</strong> Se completa automáticamente (precio público o amigo)</li>
+                <li><strong>Forma de Pago:</strong> Selecciona del dropdown</li>
+            </ul>
+
+            <p><strong>Paso 4: Agregar al Carrito</strong></p>
+            <ul>
+                <li>Haz clic en <strong>"🛒 AGREGAR AL CARRITO"</strong></li>
+                <li>El producto aparece en el resumen del carrito</li>
+                <li>Puedes agregar más productos repitiendo el proceso</li>
+            </ul>
+
+            <p><strong>Paso 5: Revisar y Finalizar</strong></p>
+            <ul>
+                <li>Revisa todos los productos en el carrito</li>
+                <li>Verifica cantidades y precios</li>
+                <li>Confirma el <strong>total con IVA incluido</strong></li>
+                <li>Haz clic en <strong>"✅ FINALIZAR VENTA"</strong></li>
+            </ul>
+        </div>
+
+        <h3>🎯 Funciones Avanzadas del Sistema de Ventas</h3>
+        
+        <h4>🎁 Ofertas Automáticas</h4>
+        <p>El sistema detecta y aplica automáticamente:</p>
+        <ul>
+            <li><strong>Ofertas por Cantidad:</strong> Ej. "3x2" - Paga 2, lleva 3</li>
+            <li><strong>Ofertas por Porcentaje:</strong> Ej. "20% de descuento"</li>
+            <li><strong>Precios Especiales:</strong> Precios fijos promocionales</li>
+        </ul>
+
+        <h4>✅ Validación Visual</h4>
+        <ul>
+            <li><strong>Campos con borde verde:</strong> Datos válidos</li>
+            <li><strong>Campos con borde rojo:</strong> Datos inválidos o faltantes</li>
+            <li><strong>Tooltips informativos:</strong> Ayuda contextual en botones</li>
+            <li><strong>Alertas de stock:</strong> Aviso cuando el stock es insuficiente</li>
+        </ul>
+
+        <h4>🧮 Cálculos Automáticos</h4>
+        <ul>
+            <li><strong>IVA:</strong> 21% calculado automáticamente</li>
+            <li><strong>Subtotales:</strong> Por producto y total general</li>
+            <li><strong>Descuentos:</strong> Aplicados automáticamente según ofertas</li>
+            <li><strong>Stock:</strong> Actualización inmediata después de cada venta</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="gestion-inventario">7. 📦 GESTIÓN DE INVENTARIO</h2>
+
+        <h3>📋 Ver y Gestionar Inventario</h3>
+        
+        <p>Para acceder al inventario completo:</p>
+        <ol>
+            <li>Ve a <strong>"⚙️ Menú Gestión"</strong></li>
+            <li>Selecciona <strong>"📦 Ver Inventario"</strong></li>
+        </ol>
+
+        <h4>🔍 Funciones del Inventario:</h4>
+        <ul>
+            <li><strong>Búsqueda inteligente:</strong> Filtra por marca, descripción, color o talle</li>
+            <li><strong>Ordenamiento:</strong> Haz clic en cualquier columna para ordenar</li>
+            <li><strong>Modificar producto:</strong> Doble clic para editar</li>
+            <li><strong>Eliminar producto:</strong> Selecciona y usa el botón eliminar</li>
+            <li><strong>Exportar a CSV:</strong> Descarga tu inventario completo</li>
+        </ul>
+
+        <h3>💰 Actualización de Precios</h3>
+        
+        <div class="step-box">
+            <h4>Cómo Actualizar Precios:</h4>
+            <ol>
+                <li>Desde el inventario, haz <strong>doble clic</strong> en el producto</li>
+                <li>Se abrirá la ventana de <strong>"Modificar Producto"</strong></li>
+                <li>Actualiza los campos necesarios:
+                    <ul>
+                        <li><strong>Precio Costo:</strong> Nuevo costo de adquisición</li>
+                        <li><strong>% Venta:</strong> Nuevo margen para precio público</li>
+                        <li><strong>% Amigo:</strong> Nuevo margen para precio especial</li>
+                    </ul>
+                </li>
+                <li>Los <strong>precios se recalculan automáticamente</strong></li>
+                <li>Haz clic en <strong>"Guardar Cambios"</strong></li>
+            </ol>
+        </div>
+
+        <h4>📊 Información del Inventario:</h4>
+        <table>
+            <tr>
+                <th>Columna</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><strong>Marca</strong></td>
+                <td>Marca o proveedor del producto</td>
+            </tr>
+            <tr>
+                <td><strong>Descripción</strong></td>
+                <td>Nombre completo del producto</td>
+            </tr>
+            <tr>
+                <td><strong>Color</strong></td>
+                <td>Color específico del producto</td>
+            </tr>
+            <tr>
+                <td><strong>Talle</strong></td>
+                <td>Talla o tamaño del producto</td>
+            </tr>
+            <tr>
+                <td><strong>Stock</strong></td>
+                <td>Cantidad disponible actual</td>
+            </tr>
+            <tr>
+                <td><strong>Precio Costo</strong></td>
+                <td>Costo de adquisición del producto</td>
+            </tr>
+            <tr>
+                <td><strong>Precio Venta</strong></td>
+                <td>Precio público calculado automáticamente</td>
+            </tr>
+            <tr>
+                <td><strong>Valor Total</strong></td>
+                <td>Stock × Precio Costo (valorización)</td>
+            </tr>
+        </table>
+
+        <h3>📂 Carga Masiva Avanzada</h3>
+        
+        <div class="step-box">
+            <h4>Proceso Completo de Carga Masiva:</h4>
+            
+            <p><strong>Paso 1: Preparar el Archivo CSV</strong></p>
+            <ol>
+                <li>Ve a <strong>"⚙️ Menú Gestión"</strong> → <strong>"📂 Carga Masiva"</strong></li>
+                <li>Haz clic en <strong>"Descargar Modelo CSV"</strong></li>
+                <li>Abre el archivo con Excel, LibreOffice o similar</li>
+                <li>Completa todas las filas con tus productos</li>
+                <li>Guarda como <strong>CSV (separado por comas)</strong></li>
+            </ol>
+
+            <p><strong>Paso 2: Validar los Datos</strong></p>
+            <ul>
+                <li><strong>Sin campos vacíos:</strong> Completa todos los campos obligatorios</li>
+                <li><strong>Precios numéricos:</strong> Sin símbolos de moneda ($ o ,)</li>
+                <li><strong>Stock entero:</strong> Solo números enteros para cantidades</li>
+                <li><strong>Porcentajes:</strong> Solo números (ej: 50, no 50%)</li>
+            </ul>
+
+            <p><strong>Paso 3: Cargar el Archivo</strong></p>
+            <ol>
+                <li>En la pantalla de carga masiva, haz clic en <strong>"Seleccionar Archivo"</strong></li>
+                <li>Elige tu archivo CSV completado</li>
+                <li>Haz clic en <strong>"Cargar Productos"</strong></li>
+                <li>El sistema validará y cargará todos los productos</li>
+                <li>Se mostrará un resumen de productos cargados exitosamente</li>
+            </ol>
+        </div>
+
+        <div class="alert alert-info">
+            <h4 style="color: #4f46e5; margin-top: 0;">💡 Consejos para Carga Masiva</h4>
+            <ul>
+                <li><strong>Respaldo automático:</strong> El sistema hace respaldo antes de cargar</li>
+                <li><strong>Validación completa:</strong> Se verifican todos los datos antes de guardar</li>
+                <li><strong>Productos duplicados:</strong> Se detectan automáticamente</li>
+                <li><strong>Codificación UTF-8:</strong> Para caracteres especiales y acentos</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="reportes-analisis">8. 📊 REPORTES Y ANÁLISIS</h2>
+
+        <h3>📈 Ventas del Día</h3>
+        
+        <p>Para ver el resumen de ventas diarias:</p>
+        <ol>
+            <li>Desde la pantalla principal, haz clic en <strong>"📊 Ventas del Día"</strong></li>
+            <li>Se mostrará una tabla completa con todas las ventas del día</li>
+        </ol>
+
+        <h4>📋 Información Incluida:</h4>
+        <ul>
+            <li><strong>Detalle de cada venta:</strong> Productos, cantidades, precios</li>
+            <li><strong>Formas de pago:</strong> Distribución por método de pago</li>
+            <li><strong>Totales del día:</strong> Ingresos brutos y netos</li>
+            <li><strong>IVA calculado:</strong> Monto total de IVA del día</li>
+            <li><strong>Productos más vendidos:</strong> Ranking de productos</li>
+        </ul>
+
+        <h3>📊 Reportes Avanzados</h3>
+        
+        <p>Para acceder a reportes personalizados:</p>
+        <ol>
+            <li>Ve a <strong>"⚙️ Menú Gestión"</strong></li>
+            <li>Selecciona <strong>"📊 Reportes"</strong></li>
+        </ol>
+
+        <h4>🔍 Tipos de Filtros Disponibles:</h4>
+        <table>
+            <tr>
+                <th>Filtro</th>
+                <th>Descripción</th>
+                <th>Opciones</th>
+            </tr>
+            <tr>
+                <td><strong>Por Fechas</strong></td>
+                <td>Seleccionar rango específico</td>
+                <td>Desde/Hasta, Última semana, Último mes</td>
+            </tr>
+            <tr>
+                <td><strong>Por Productos</strong></td>
+                <td>Análisis de productos específicos</td>
+                <td>Selección múltiple, Más vendidos, Menos vendidos</td>
+            </tr>
+            <tr>
+                <td><strong>Por Marcas</strong></td>
+                <td>Rendimiento por marca</td>
+                <td>Comparativa, Ranking de marcas</td>
+            </tr>
+            <tr>
+                <td><strong>Por Formas de Pago</strong></td>
+                <td>Distribución de métodos de pago</td>
+                <td>Efectivo, Tarjetas, Transferencias, etc.</td>
+            </tr>
+            <tr>
+                <td><strong>Por Rentabilidad</strong></td>
+                <td>Análisis de márgenes de ganancia</td>
+                <td>Productos más/menos rentables</td>
+            </tr>
+        </table>
+
+        <h3>🏦 Cierre de Caja</h3>
+        
+        <div class="step-box">
+            <h4>Proceso de Cierre de Caja:</h4>
+            
+            <p><strong>Cuándo realizar el cierre:</strong></p>
+            <ul>
+                <li>Al final de cada día de trabajo</li>
+                <li>Antes de cambios importantes de precios</li>
+                <li>Para generar reportes mensuales</li>
+            </ul>
+
+            <p><strong>Pasos del cierre:</strong></p>
+            <ol>
+                <li>Ve a <strong>"⚙️ Menú Gestión"</strong></li>
+                <li>Selecciona <strong>"🏦 Cierre de Caja"</strong></li>
+                <li>Revisa el resumen completo del día</li>
+                <li>Verifica los totales por forma de pago</li>
+                <li>Haz clic en <strong>"Generar Reporte CSV"</strong></li>
+                <li>Descarga el archivo para tus registros</li>
+                <li>Confirma el <strong>"Cierre Definitivo"</strong></li>
+            </ol>
+
+            <p><strong>Qué incluye el archivo CSV:</strong></p>
+            <ul>
+                <li>Detalle completo de cada venta</li>
+                <li>Resumen por formas de pago</li>
+                <li>Totales de IVA</li>
+                <li>Productos vendidos con cantidades</li>
+                <li>Información de fecha y hora</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-info">
+            <h4 style="color: #4f46e5; margin-top: 0;">💡 Beneficios del Cierre de Caja</h4>
+            <ul>
+                <li><strong>Archivo histórico:</strong> Las ventas se mueven a <code>ventas_historico_YYYY.json</code></li>
+                <li><strong>Mejor rendimiento:</strong> Limpia las ventas del día para mayor velocidad</li>
+                <li><strong>Respaldo automático:</strong> Preserva todos los datos antes del cierre</li>
+                <li><strong>Control contable:</strong> Archivo CSV listo para contabilidad</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="centro-ia">9. 🤖 CENTRO DE INTELIGENCIA ARTIFICIAL</h2>
+
+        <h3>🧠 Acceso al Centro de IA</h3>
+        
+        <p>Para acceder a las funciones de inteligencia artificial:</p>
+        <ol>
+            <li>Ve a <strong>"⚙️ Menú Gestión"</strong></li>
+            <li>En el panel derecho, haz clic en <strong>"🤖 Centro IA"</strong></li>
+        </ol>
+
+        <h3>📊 Dashboard de IA</h3>
+        
+        <div class="step-box">
+            <h4>Información del Dashboard:</h4>
+            <ul>
+                <li><strong>Resumen General:</strong> Estadísticas clave del negocio</li>
+                <li><strong>Alertas Inteligentes:</strong> Productos que requieren atención</li>
+                <li><strong>Tendencias:</strong> Análisis de patrones de venta</li>
+                <li><strong>Recomendaciones:</strong> Sugerencias automáticas del sistema</li>
+            </ul>
+        </div>
+
+        <h3>🔄 Sugerencias de Reposición</h3>
+        
+        <h4>Cómo funciona el análisis de reposición:</h4>
+        <ol>
+            <li>Haz clic en <strong>"📦 Reposición"</strong> en el Centro IA</li>
+            <li>Configura los parámetros:
+                <ul>
+                    <li><strong>Días de análisis:</strong> Período para calcular velocidad de venta</li>
+                    <li><strong>Umbral de stock:</strong> Nivel mínimo de alerta</li>
+                </ul>
+            </li>
+            <li>Haz clic en <strong>"Actualizar Análisis"</strong></li>
+            <li>Revisa la tabla de sugerencias</li>
+        </ol>
+
+        <h4>📋 Información de la Tabla de Reposición:</h4>
+        <table>
+            <tr>
+                <th>Columna</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><strong>Producto</strong></td>
+                <td>Identificación completa del producto</td>
+            </tr>
+            <tr>
+                <td><strong>Stock Actual</strong></td>
+                <td>Cantidad disponible en este momento</td>
+            </tr>
+            <tr>
+                <td><strong>Velocidad Venta</strong></td>
+                <td>Unidades vendidas por día (promedio)</td>
+            </tr>
+            <tr>
+                <td><strong>Días Restantes</strong></td>
+                <td>Días estimados hasta agotar stock</td>
+            </tr>
+            <tr>
+                <td><strong>Sugerencia</strong></td>
+                <td>Cantidad recomendada para reponer</td>
+            </tr>
+            <tr>
+                <td><strong>Prioridad</strong></td>
+                <td>CRÍTICO, ALTO, MEDIO, BAJO</td>
+            </tr>
+        </table>
+
+        <h3>💰 Análisis de Precios</h3>
+        
+        <div class="step-box">
+            <h4>Optimización Inteligente de Precios:</h4>
+            
+            <p><strong>Acceso:</strong></p>
+            <ol>
+                <li>En el Centro IA, haz clic en <strong>"💰 Precios"</strong></li>
+                <li>El sistema analizará automáticamente tu inventario</li>
+            </ol>
+
+            <p><strong>Análisis incluido:</strong></p>
+            <ul>
+                <li><strong>Productos con margen bajo:</strong> Menos del 30% de ganancia</li>
+                <li><strong>Productos con rotación lenta:</strong> Pocos vendidos recientemente</li>
+                <li><strong>Oportunidades de mejora:</strong> Sugerencias de ajustes</li>
+                <li><strong>Comparativa de rentabilidad:</strong> Ranking de productos</li>
+            </ul>
+
+            <p><strong>Recomendaciones automáticas:</strong></p>
+            <ul>
+                <li><strong>Incrementar precios:</strong> Productos con alta demanda</li>
+                <li><strong>Crear ofertas:</strong> Productos con baja rotación</li>
+                <li><strong>Revisar costos:</strong> Productos con margen insuficiente</li>
+            </ul>
+        </div>
+
+        <h3>📈 Análisis Avanzado</h3>
+        
+        <p>El análisis avanzado categoriza tus productos en:</p>
+
+        <h4>🏆 Categorías de Performance:</h4>
+        <ul>
+            <li><strong>⭐ ESTRELLA:</strong> Alta rotación + Alta rentabilidad</li>
+            <li><strong>💰 GANADOR:</strong> Buena rotación + Excelente rentabilidad</li>
+            <li><strong>🚀 POTENCIAL:</strong> Alta rotación + Rentabilidad mejorable</li>
+            <li><strong>⚠️ ATENCIÓN:</strong> Baja rotación + Rentabilidad variable</li>
+            <li><strong>🔄 REVISAR:</strong> Productos que requieren análisis</li>
+        </ul>
+
+        <h4>📊 Métricas Calculadas:</h4>
+        <ul>
+            <li><strong>Días de stock:</strong> Tiempo estimado para agotar inventario</li>
+            <li><strong>Rotación:</strong> Velocidad de venta promedio</li>
+            <li><strong>Rentabilidad:</strong> Margen de ganancia porcentual</li>
+            <li><strong>Valor total:</strong> Inversión total en cada producto</li>
+        </ul>
+
+        <div class="alert alert-success">
+            <h4 style="color: #10b981; margin-top: 0;">💡 Consejos para Usar la IA</h4>
+            <ul>
+                <li>Revisa las sugerencias <strong>semanalmente</strong></li>
+                <li>Ajusta los parámetros según tu tipo de negocio</li>
+                <li>Combina el análisis de IA con tu experiencia comercial</li>
+                <li>Usa las recomendaciones para planificar compras</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="configuracion-avanzada">10. ⚙️ CONFIGURACIÓN AVANZADA</h2>
+
+        <h3>👥 Gestión de Usuarios</h3>
+        
+        <div class="step-box">
+            <h4>Crear Usuarios Adicionales (Solo Administradores):</h4>
+            
+            <p><strong>Acceso:</strong></p>
+            <ol>
+                <li>Ve a <strong>"⚙️ Menú Gestión"</strong></li>
+                <li>Selecciona <strong>"👥 Gestión de Usuarios"</strong></li>
+                <li>Haz clic en <strong>"Crear Nuevo Usuario"</strong></li>
+            </ol>
+
+            <p><strong>Configuración del usuario:</strong></p>
+            <ul>
+                <li><strong>Nombre de usuario:</strong> Único en el sistema</li>
+                <li><strong>Contraseña:</strong> Mínimo 4 caracteres</li>
+                <li><strong>Rol:</strong> Administrador o Vendedor</li>
+                <li><strong>Estado:</strong> Activo o Inactivo</li>
+            </ul>
+        </div>
+
+        <h4>🔐 Diferencias entre Roles:</h4>
+        <table>
+            <tr>
+                <th>Función</th>
+                <th>Administrador</th>
+                <th>Vendedor</th>
+            </tr>
+            <tr>
+                <td><strong>Realizar ventas</strong></td>
+                <td>✅ Sí</td>
+                <td>✅ Sí</td>
+            </tr>
+            <tr>
+                <td><strong>Ver ventas del día</strong></td>
+                <td>✅ Sí</td>
+                <td>✅ Sí</td>
+            </tr>
+            <tr>
+                <td><strong>Agregar productos</strong></td>
+                <td>✅ Sí</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td><strong>Modificar precios</strong></td>
+                <td>✅ Sí</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td><strong>Ver reportes</strong></td>
+                <td>✅ Sí</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td><strong>Cierre de caja</strong></td>
+                <td>✅ Sí</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td><strong>Centro de IA</strong></td>
+                <td>✅ Sí</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td><strong>Gestión de usuarios</strong></td>
+                <td>✅ Sí</td>
+                <td>❌ No</td>
+            </tr>
+        </table>
+
+        <h3>💾 Respaldos y Seguridad</h3>
+        
+        <div class="step-box">
+            <h4>Archivos Importantes del Sistema:</h4>
+            
+            <p><strong>Archivos de datos:</strong></p>
+            <ul>
+                <li><code><strong>productos.json</strong></code> - Base de datos de productos</li>
+                <li><code><strong>ventas.json</strong></code> - Ventas del día actual</li>
+                <li><code><strong>ventas_historico_YYYY.json</strong></code> - Historial por año</li>
+                <li><code><strong>usuarios.json</strong></code> - Base de datos de usuarios</li>
+            </ul>
+
+            <p><strong>Proceso de respaldo:</strong></p>
+            <ol>
+                <li><strong>Cierra la aplicación</strong> completamente</li>
+                <li><strong>Copia los archivos JSON</strong> a una ubicación segura</li>
+                <li><strong>Guarda en múltiples lugares:</strong> USB, nube, otro disco</li>
+                <li><strong>Realiza respaldos semanalmente</strong></li>
+            </ol>
+
+            <p><strong>Restauración de datos:</strong></p>
+            <ol>
+                <li>Cierra la aplicación</li>
+                <li>Reemplaza los archivos JSON dañados</li>
+                <li>Reinicia la aplicación</li>
+                <li>Verifica que los datos se carguen correctamente</li>
+            </ol>
+        </div>
+
+        <h3>🔧 Optimización del Rendimiento</h3>
+        
+        <h4>⚡ Para mejor rendimiento:</h4>
+        <ul>
+            <li><strong>Cierre de caja regular:</strong> Archiva ventas mensualmente</li>
+            <li><strong>Limpia productos obsoletos:</strong> Elimina productos sin stock ni ventas</li>
+            <li><strong>Organiza por categorías:</strong> Usa marcas claras para facilitar búsquedas</li>
+            <li><strong>Mantén actualizado:</strong> Usa siempre la última versión</li>
+        </ul>
+
+        <h4>📊 Límites recomendados:</h4>
+        <ul>
+            <li><strong>Productos activos:</strong> Máximo 10,000 para óptimo rendimiento</li>
+            <li><strong>Ventas por día:</strong> Sin límite práctico</li>
+            <li><strong>Usuarios:</strong> Máximo 20 usuarios simultáneos</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="resolucion-problemas">11. 🛠️ RESOLUCIÓN DE PROBLEMAS</h2>
+
+        <h3>❌ Problemas Comunes y Soluciones</h3>
+
+        <div class="step-box">
+            <h4>🚫 La aplicación no inicia</h4>
+            
+            <p><strong>Síntomas:</strong> Doble clic no abre la aplicación</p>
+            
+            <p><strong>Soluciones:</strong></p>
+            <ol>
+                <li><strong>Verificar integridad:</strong>
+                    <ul>
+                        <li>Asegúrate de que el archivo <code>KONTROL+.exe</code> no esté corrupto</li>
+                        <li>Reextrae el ZIP si es necesario</li>
+                    </ul>
+                </li>
+                <li><strong>Ejecutar como administrador:</strong>
+                    <ul>
+                        <li>Clic derecho en <code>KONTROL+.exe</code></li>
+                        <li>Selecciona "Ejecutar como administrador"</li>
+                    </ul>
+                </li>
+                <li><strong>Verificar procesos:</strong>
+                    <ul>
+                        <li>Abre el Administrador de Tareas (Ctrl+Shift+Esc)</li>
+                        <li>Busca procesos de "KONTROL" y termínalos</li>
+                        <li>Intenta ejecutar nuevamente</li>
+                    </ul>
+                </li>
+                <li><strong>Reinstalar:</strong>
+                    <ul>
+                        <li>Elimina la carpeta de instalación</li>
+                        <li>Reextrae el ZIP en una nueva ubicación</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-box">
+            <h4>🖼️ Error "No se puede cargar el logo"</h4>
+            
+            <p><strong>Síntomas:</strong> La aplicación inicia pero no muestra imágenes</p>
+            
+            <p><strong>Soluciones:</strong></p>
+            <ol>
+                <li><strong>Verificar archivos de imagen:</strong>
+                    <ul>
+                        <li><code>LOGO APP.png</code></li>
+                        <li><code>7.png</code></li>
+                        <li><code>LOGONOMBRE.png</code></li>
+                        <li>Carpeta <code>screenshot/</code> completa</li>
+                    </ul>
+                </li>
+                <li><strong>Verificar permisos:</strong>
+                    <ul>
+                        <li>Asegúrate de tener permisos de lectura en la carpeta</li>
+                        <li>Ejecuta como administrador si es necesario</li>
+                    </ul>
+                </li>
+                <li><strong>Reinstalar completamente</strong></li>
+            </ol>
+        </div>
+
+        <div class="step-box">
+            <h4>💾 Los datos no se guardan</h4>
+            
+            <p><strong>Síntomas:</strong> Productos o ventas desaparecen al reiniciar</p>
+            
+            <p><strong>Soluciones:</strong></p>
+            <ol>
+                <li><strong>Verificar permisos de escritura:</strong>
+                    <ul>
+                        <li>Clic derecho en la carpeta de instalación</li>
+                        <li>Propiedades → Seguridad</li>
+                        <li>Asegurar permisos completos para tu usuario</li>
+                    </ul>
+                </li>
+                <li><strong>Verificar archivos JSON:</strong>
+                    <ul>
+                        <li>Busca <code>productos.json</code> y <code>ventas.json</code></li>
+                        <li>Si no existen, la app los creará en el próximo inicio</li>
+                    </ul>
+                </li>
+                <li><strong>Cambiar ubicación:</strong>
+                    <ul>
+                        <li>Mueve la instalación a <code>C:\Users\[Usuario]\Documents\</code></li>
+                        <li>Esta ubicación tiene permisos completos</li>
+                    </ul>
+                </li>
+                <li><strong>Ejecutar como administrador</strong></li>
+            </ol>
+        </div>
+
+        <div class="step-box">
+            <h4>🔐 Problemas de autenticación</h4>
+            
+            <p><strong>Síntomas:</strong> No puedes acceder con tu usuario</p>
+            
+            <p><strong>Soluciones:</strong></p>
+            <ol>
+                <li><strong>Verificar credenciales:</strong>
+                    <ul>
+                        <li>Asegúrate de escribir usuario y contraseña exactamente</li>
+                        <li>Verifica que no esté activado Caps Lock</li>
+                    </ul>
+                </li>
+                <li><strong>Resetear sistema de usuarios:</strong>
+                    <ul>
+                        <li>Cierra la aplicación</li>
+                        <li>Elimina el archivo <code>usuarios.json</code></li>
+                        <li>Al reiniciar, podrás crear un nuevo usuario administrador</li>
+                    </ul>
+                </li>
+                <li><strong>Contactar soporte técnico</strong> si persiste el problema</li>
+            </ol>
+        </div>
+
+        <h3>⚡ Problemas de Rendimiento</h3>
+
+        <div class="alert alert-info">
+            <h4 style="color: #4f46e5; margin-top: 0;">🐌 La aplicación funciona lenta</h4>
+            
+            <p><strong>Soluciones:</strong></p>
+            <ul>
+                <li><strong>Cerrar aplicaciones innecesarias</strong> para liberar RAM</li>
+                <li><strong>Realizar cierre de caja</strong> para archivar ventas antiguas</li>
+                <li><strong>Verificar espacio en disco</strong> (mínimo 500MB libres)</li>
+                <li><strong>Reiniciar la aplicación</strong> periódicamente</li>
+                <li><strong>Actualizar Windows</strong> y drivers gráficos</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="soporte">12. 📞 SOPORTE TÉCNICO</h2>
+
+        <h3>🚨 Contacto Inmediato</h3>
+
+        <div class="step-box">
+            <h4 style="color: #10b981; margin-top: 0;">📱 Canales de Soporte Oficial</h4>
+            
+            <ul>
+                <li><strong>📞 WhatsApp:</strong> +54 351 6875178</li>
+                <li><strong>📧 Email:</strong> alenia.online@gmail.com</li>
+                <li><strong>🌐 GitHub:</strong> <a href="https://github.com/vjlale/GESTION-KONTROL-" target="_blank">GESTION-KONTROL-</a></li>
+                <li><strong>🕒 Horario:</strong> Lunes a Viernes 9:00-18:00 (GMT-3)</li>
+            </ul>
+
+            <p><strong>🆘 Soporte de Emergencia:</strong> Disponible 24/7 para problemas críticos que afecten las ventas</p>
+        </div>
+
+        <h3>📋 Información para Proporcionar al Soporte</h3>
+
+        <p>Cuando contactes al soporte, incluye siempre:</p>
+
+        <ol>
+            <li><strong>Versión de ALEN.IA KONTROL+:</strong> v2.3.0</li>
+            <li><strong>Sistema operativo:</strong> Windows 10/11 + versión específica</li>
+            <li><strong>Descripción detallada del problema:</strong>
+                <ul>
+                    <li>¿Qué estabas haciendo cuando ocurrió?</li>
+                    <li>¿El problema es constante o intermitente?</li>
+                    <li>¿Aparece algún mensaje de error?</li>
+                </ul>
+            </li>
+            <li><strong>Pasos para reproducir el problema</strong></li>
+            <li><strong>Capturas de pantalla</strong> (si es posible)</li>
+            <li><strong>¿Funcionaba antes?</strong> ¿Cuándo dejó de funcionar?</li>
+        </ol>
+
+        <h3>🌐 Recursos de Autoayuda</h3>
+
+        <div class="two-column">
+            <div>
+                <h4>📚 Documentación</h4>
+                <ul>
+                    <li><strong>Esta Guía de Usuario</strong> - Manual completo</li>
+                    <li><strong>Manual Técnico</strong> - Información técnica avanzada</li>
+                    <li><strong>FAQ Online</strong> - Preguntas frecuentes</li>
+                    <li><strong>Videos Tutoriales</strong> - Próximamente</li>
+                </ul>
+            </div>
+            <div>
+                <h4>🤝 Comunidad</h4>
+                <ul>
+                    <li><strong>GitHub Issues</strong> - Reportar bugs</li>
+                    <li><strong>Grupo WhatsApp</strong> - Comunidad de usuarios</li>
+                    <li><strong>Foro de Soporte</strong> - Consultas técnicas</li>
+                    <li><strong>Canal Telegram</strong> - Actualizaciones</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>🔄 Actualizaciones y Versiones</h3>
+
+        <div class="alert alert-info">
+            <h4 style="color: #4f46e5; margin-top: 0;">📥 Sistema de Actualizaciones</h4>
+            
+            <p><strong>Notificaciones automáticas:</strong></p>
+            <ul>
+                <li>La aplicación verifica actualizaciones al iniciar</li>
+                <li>Recibirás notificación si hay versiones nuevas disponibles</li>
+                <li>Todas las actualizaciones son <strong>100% gratuitas</strong></li>
+            </ul>
+
+            <p><strong>Proceso de actualización:</strong></p>
+            <ol>
+                <li><strong>Respaldo automático:</strong> Siempre respalda tus datos antes</li>
+                <li><strong>Descarga la nueva versión</strong> desde el enlace oficial</li>
+                <li><strong>Extrae sobre la instalación actual</strong></li>
+                <li><strong>Los datos se migran automáticamente</strong></li>
+            </ol>
+        </div>
+
+        <h4>🔮 Próximas Actualizaciones Planificadas:</h4>
+        <ul>
+            <li><strong>v2.4 (Septiembre 2025):</strong>
+                <ul>
+                    <li>Integración con códigos de barras</li>
+                    <li>Módulo de facturación AFIP</li>
+                    <li>Sincronización con MercadoLibre</li>
+                    <li>Mejoras en el Centro de IA</li>
+                </ul>
+            </li>
+            <li><strong>v3.0 (Diciembre 2025):</strong>
+                <ul>
+                    <li>Versión web responsive</li>
+                    <li>Soporte para múltiples sucursales</li>
+                    <li>Integración con e-commerce</li>
+                    <li>Dashboard ejecutivo avanzado</li>
+                    <li>App móvil complementaria</li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>✅ LISTA DE VERIFICACIÓN FINAL</h2>
+
+        <div class="step-box">
+            <h3 style="color: #10b981; margin-top: 0;">🎯 Instalación y Configuración Completada</h3>
+            
+            <p>Marca cada elemento cuando lo hayas completado:</p>
+
+            <h4>📥 Instalación:</h4>
+            <ul>
+                <li>☐ Descargué y extraje el archivo ZIP correctamente</li>
+                <li>☐ Verifiqué que todos los archivos estén presentes</li>
+                <li>☐ La aplicación abre sin errores</li>
+                <li>☐ Configuré exclusiones en antivirus y firewall</li>
+            </ul>
+
+            <h4>👤 Usuario y Seguridad:</h4>
+            <ul>
+                <li>☐ Creé mi usuario administrador inicial</li>
+                <li>☐ Guardé mis credenciales en lugar seguro</li>
+                <li>☐ Verifiqué que puedo acceder al sistema</li>
+                <li>☐ Probé cerrar sesión y volver a entrar</li>
+            </ul>
+
+            <h4>📦 Configuración Inicial:</h4>
+            <ul>
+                <li>☐ Cargué mi inventario inicial (individual o masivo)</li>
+                <li>☐ Verifiqué que los precios se calculen correctamente</li>
+                <li>☐ Configuré ofertas si las necesito</li>
+                <li>☐ Realicé una venta de prueba exitosa</li>
+            </ul>
+
+            <h4>🔧 Optimización:</h4>
+            <ul>
+                <li>☐ Configuré respaldos de datos</li>
+                <li>☐ Probé todas las funciones principales</li>
+                <li>☐ Leí esta guía completa</li>
+                <li>☐ Guardé los contactos de soporte</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-success">
+            <h3 style="color: #10b981; margin-top: 0;">🎉 ¡Felicitaciones!</h3>
+            <p>Has completado exitosamente la instalación y configuración de <strong>ALEN.IA KONTROL+ v2.3</strong>. Tu sistema está listo para optimizar la gestión de tu negocio y aumentar tus ventas.</p>
+            
+            <p><strong>🚀 Próximos pasos recomendados:</strong></p>
+            <ul>
+                <li>Explora el <strong>Centro de IA</strong> para análisis predictivo</li>
+                <li>Configura <strong>alertas de stock bajo</strong></li>
+                <li>Programa <strong>respaldos semanales</strong></li>
+                <li>Únete a nuestra <strong>comunidad de usuarios</strong></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div style="text-align: center; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 30px; border-radius: 12px; border: 2px solid #4f46e5; margin: 40px 0;">
+            <h3 style="color: #fbbf24; margin-top: 0;">🎯 ¿Necesitas Ayuda Adicional?</h3>
+            <p style="font-size: 1.1em; margin: 20px 0;"><strong>No dudes en contactarnos. Estamos aquí para ayudarte a tener éxito.</strong></p>
+            
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 20px 0;">
+                <div>
+                    <strong>📞 WhatsApp</strong><br>
+                    <a href="https://wa.me/5493516875178" style="color: #4f46e5; font-size: 1.1em;">+54 351 6875178</a>
+                </div>
+                <div>
+                    <strong>📧 Email</strong><br>
+                    <a href="mailto:alenia.online@gmail.com" style="color: #4f46e5; font-size: 1.1em;">alenia.online@gmail.com</a>
+                </div>
+                <div>
+                    <strong>🌐 GitHub</strong><br>
+                    <a href="https://github.com/vjlale/GESTION-KONTROL-" style="color: #4f46e5; font-size: 1.1em;" target="_blank">GESTION-KONTROL-</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #374151;">
+                <p style="font-size: 1.2em; color: #ffffff; margin: 10px 0;"><strong>© 2025 ALENIA GESTIÓN INTELIGENTE</strong></p>
+                <p style="font-style: italic; color: #a5b4fc; margin: 5px 0;">Desarrollado con ❤️ para emprendedores argentinos</p>
+                <p style="color: #6b7280; font-size: 0.9em; margin-top: 15px;">
+                    <strong>Versión del Manual:</strong> 2.3.0 Final<br>
+                    <strong>Fecha:</strong> Septiembre 2025<br>
+                    <strong>Para:</strong> ALEN.IA KONTROL+ v2.3.0
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
